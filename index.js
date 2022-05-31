@@ -39,7 +39,9 @@ function init() {
       }
   });
   
-  
+  $(".custom-menu li").click(function(){
+    $(".context-menu").hide();
+  });
   
 
   $(function () {
