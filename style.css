@@ -4,6 +4,7 @@
   --bg-color: #008282;
   --primary-color: #c3c3c3;
   --secondary-color: #0000aa;
+  --active-color: #000180;
 }
 
 @font-face {
@@ -144,4 +145,17 @@ button {
   z-index: 99;
   border: 1px dotted;
   filter: invert(1);
+}
+
+.context-menu {
+  position: absolute;
+  margin: 0;
+  list-style-type: none;
+  padding: 2px;
+  border: outset 1px;
+  background-color: var(--primary-color);
+}
+
+.context-menu > .list-item {
+  padding: 5px 0px;
 }

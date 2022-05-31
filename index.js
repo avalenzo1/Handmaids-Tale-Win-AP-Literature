@@ -17,6 +17,18 @@ function init() {
   $(".file").mousedown(function () {
     $(this).focus();
   });
+  
+  $(".window").bind("contextmenu", function (e) {
+    e.preventDefault();
+    
+    $(".contextmenu").finish().toggle(100).
+
+      // In the right position (the mouse)
+      css({
+          top: event.pageY + "px",
+          left: event.pageX + "px"
+      });
+  });
 
   $(function () {
     let mouseDown = false;
