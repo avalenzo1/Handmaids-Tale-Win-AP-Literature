@@ -1,3 +1,9 @@
+:root {
+  --bg-color: #008282;
+}
+
 .window {
-  background-color: #008282;
+  background-color: var(--bg-color);
+  width: 800px;
+  height: 600px;
 }
