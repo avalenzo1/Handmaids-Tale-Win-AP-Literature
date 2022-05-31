@@ -1,5 +1,11 @@
 // https://artage.io/en/icon-packs/original-windows-95-icons
 
+(function( $ ){
+   $.fn.getBoundingClientRect = function() {
+      return $(this)[0].getBoundingClientRect();
+   }; 
+})( jQuery );
+
 function init() {
   let startup = new Audio(
     "https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/startup.mp3?v=1653963878874"
@@ -25,10 +31,10 @@ function init() {
       e.preventDefault();
 
       $(".context-menu")
-        .toggle()
+        .show()
         .css({
-          top: e.clientY - $(this)[0].getBoundingClientRect().top + "px",
-          left: e.clientX - $(this)[0].getBoundingClientRect().left + "px",
+          top: e.clientY - $(this).getBoundingClientRect().top + "px",
+          left: e.clientX - $(this).getBoundingClientRect().left + "px",
         });
     });
 
@@ -54,8 +60,8 @@ function init() {
       mouseDown = true;
       $(".selection").show();
 
-      this.clientX = e.clientX - $("#main")[0].getBoundingClientRect().left;
-      this.clientY = e.clientY - $("#main")[0].getBoundingClientRect().top;
+      this.clientX = e.clientX - $("#main").getBoundingClientRect().left;
+      this.clientY = e.clientY - $("#main").getBoundingClientRect().top;
 
       $(".selection").css("left", this.clientX + "px");
       $(".selection").css("top", this.clientY + "px");
@@ -63,8 +69,8 @@ function init() {
 
     $(".desktop").mousemove(function (e) {
       if (mouseDown) {
-        this.clientX = e.clientX - $("#main")[0].getBoundingClientRect().left;
-        this.clientY = e.clientY - $("#main")[0].getBoundingClientRect().top;
+        this.clientX = e.clientX - $("#main").getBoundingClientRect().left;
+        this.clientY = e.clientY - $("#main").getBoundingClientRect().top;
         this.selectionX = parseInt($(".selection").css("left"));
         this.selectionY = parseInt($(".selection").css("top"));
 
