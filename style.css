@@ -157,5 +157,11 @@ button {
 }
 
 .context-menu > .list-item {
-  padding: 5px 0px;
+  padding: 5px 10px;
+  width: 200px;
+}
+
+.context-menu > .list-item:hover {
+  background-color: var(--active-color);
+  color: white;
 }

@@ -18,17 +18,29 @@ function init() {
     $(this).focus();
   });
   
+  // https://stackoverflow.com/a/20471268 SRC
+  
+  $(".context-menu").hide();
+  
   $(".window").bind("contextmenu", function (e) {
-    e.preventDefault();
-    
-    $(".contextmenu").finish().toggle(100).
+      e.preventDefault();
 
-      // In the right position (the mouse)
-      css({
-          top: event.pageY + "px",
-          left: event.pageX + "px"
-      });
+      $(".context-menu").toggle()
+
+        .css({
+            top: event.pageY + "px",
+            left: event.pageX + "px"
+        });
+    });
+
+  $(document).bind("mousedown", function (e) {
+      if (!$(e.target).parents(".context-menu").length > 0) {
+          $(".context-menu").hide();
+      }
   });
+  
+  
+  
 
   $(function () {
     let mouseDown = false;
@@ -39,8 +51,8 @@ function init() {
       mouseDown = true;
       $(".selection").show();
 
-      this.clientX = e.clientX - $("#main").offset().left;
-      this.clientY = e.clientY - $("#main").offset().top;
+      this.clientX = e.clientX - $("#main")[0].getBoundingClientRect().left;
+      this.clientY = e.clientY - $("#main")[0].getBoundingClientRect().top;
 
       $(".selection").css("left", this.clientX + "px");
       $(".selection").css("top", this.clientY + "px");
@@ -48,8 +60,8 @@ function init() {
 
     $(".bg").mousemove(function (e) { 
       if (mouseDown) {
-        this.clientX = e.clientX - $("#main").offset().left;
-        this.clientY = e.clientY - $("#main").offset().top;
+        this.clientX = e.clientX - $("#main")[0].getBoundingClientRect().left;
+        this.clientY = e.clientY - $("#main")[0].getBoundingClientRect().top;
         this.selectionX = parseInt($(".selection").css("left"));
         this.selectionY = parseInt($(".selection").css("top"));
         
