@@ -12,6 +12,11 @@
   src: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/W95FA.otf?v=1653966439826f);
 }
 
+@font-face {
+  font-family: w95fa;
+  src: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/W95FA.otf?v=1653966439826f);
+}
+
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -149,15 +154,16 @@ button {
 
 .context-menu {
   position: absolute;
+  z-index: 101;
   margin: 0;
   list-style-type: none;
-  padding: 2px;
+  padding: 1px;
   border: outset 1px;
   background-color: var(--primary-color);
 }
 
 .context-menu > .list-item {
-  padding: 5px 10px;
+  padding: 2px 10px;
   width: 200px;
 }
 

@@ -28,8 +28,8 @@ function init() {
         .toggle()
 
         .css({
-          top: event.pageY + "px",
-          left: event.pageX + "px",
+          top: e.clientY - $(this)[0].getBoundingClientRect().top + "px",
+          left: e.clientX - $(this)[0].getBoundingClientRect().left + "px",
         });
     });
 
