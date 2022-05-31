@@ -41,7 +41,7 @@ function init() {
         
         
         if (this.clientX - this.selectionX < 0) {
-          $(".selection").css("transform", "rotateX(180deg)") 
+           
         }
         
         $(".selection").css("width", Math.abs(this.clientX - this.selectionX) + "px");
