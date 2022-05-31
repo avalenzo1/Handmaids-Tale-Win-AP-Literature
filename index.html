@@ -13,7 +13,7 @@
       integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA="
       crossorigin="anonymous"
     ></script>
-    <script src="https://raw.githubusercontent.com/yeco/jquery-ui-touch-punch/master/jquery.ui.touch-punch.min.js"></script>
+    <script src="/jquery.ui.touch-punch.min.js"></script>
     <script src="index.js" defer></script>
     <title>Handmaid's Tale Project</title>
   </head>
@@ -21,30 +21,30 @@
     <div class="window" id="main">
       <div class="desktop">
         <div class="selection"></div>
+        <div class="file no-select" tabindex="0" readonly>
+          <img
+            class="ico no-select"
+            src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/computer-0.png?v=1653967598572"
+          />
+          <span> My Computer </span>
+        </div>
+
+        <div class="file" tabindex="0" readonly>
+          <img
+            class="ico"
+            src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/bin-0.png?v=1653969249131"
+          />
+          <span>Recycle Bin</span>
+        </div>
       </div>
       <ul class="context-menu">
         <li class="list-item">New</li>
         <li class="list-item">New</li>
         <li class="list-item">New</li>
         <li class="list-item">New</li>
-        <hr>
+        <hr />
         <li class="list-item">New</li>
       </ul>
-      <div class="file no-select" tabindex="0" readonly>
-        <img
-          class="ico no-select"
-          src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/computer-0.png?v=1653967598572"
-        />
-        <span> My Computer </span>
-      </div>
-
-      <div class="file" tabindex="0" readonly>
-        <img
-          class="ico"
-          src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/bin-0.png?v=1653969249131"
-        />
-        <span>Recycle Bin</span>
-      </div>
 
       <div class="taskbar">
         <button class="btn start">

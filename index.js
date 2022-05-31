@@ -41,8 +41,6 @@ function init() {
     $(".context-menu li").click(function () {
       $(".context-menu").hide();
     });
-
-    $(".context-menu").hide();
   });
 
   $(function () {
@@ -50,7 +48,9 @@ function init() {
 
     $(".selection").hide();
 
-    $(".bg").mousedown(function (e) {
+    $(".desktop").mousedown(function (e) {
+      e.stopImmediatePropagation();
+      
       mouseDown = true;
       $(".selection").show();
 
@@ -61,7 +61,7 @@ function init() {
       $(".selection").css("top", this.clientY + "px");
     });
 
-    $(".bg").mousemove(function (e) {
+    $(".desktop").mousemove(function (e) {
       if (mouseDown) {
         this.clientX = e.clientX - $("#main")[0].getBoundingClientRect().left;
         this.clientY = e.clientY - $("#main")[0].getBoundingClientRect().top;
@@ -104,7 +104,7 @@ function init() {
       }
     });
 
-    $(".bg").mouseup(function (e) {
+    $(".desktop").mouseup(function (e) {
       mouseDown = false;
 
       $(".selection").removeAttr("style");

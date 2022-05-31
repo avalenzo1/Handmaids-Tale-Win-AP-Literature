@@ -30,9 +30,6 @@
 /* TODO: CHANGE WINDOW TO GRID LAYOUT */
 
 .window {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   position: relative;
   width: 800px;
   height: 600px;
@@ -70,7 +67,7 @@ button {
   gap: 4px;
 }
 
-.window > .file {
+.window > .desktop > .file {
   display: inline-block;
   position: relative;
 
@@ -82,41 +79,41 @@ button {
   font-size: smaller;
 }
 
-.window > .file:focus {
+.window > .desktop > .file:focus {
   outline: none;
   z-index: 100;
 }
 
-.window > .file:focus span {
+.window > .desktop > .file:focus span {
   background-color: var(--secondary-color);
   outline-offset: -1px;
   outline: dotted 1px;
 }
 
-.window > .file > .ico {
+.window > .desktop > .file > .ico {
   display: block;
   margin: 0 auto;
   margin-bottom: 4px;
   user-select: none;
 }
 
-.window > .file:focus > .ico {
+.window > .desktop > .file:focus > .ico {
   filter: brightness(0.5);
 }
 
-.window > .taskbar .spacer {
+.window > .desktop > .taskbar .spacer {
   height: auto;
   border: inset 2px;
   border-bottom: 0;
   border-top: 0;
 }
 
-.window > .taskbar > .tools {
+.window > .desktop > .taskbar > .tools {
   right: 2px;
   position: absolute;
 }
 
-.window > .taskbar > .btn.start {
+.window > .desktop > .taskbar > .btn.start {
   font-weight: bold;
 }
 
@@ -141,18 +138,15 @@ button {
   outline: none;
 }
 
-.tools {
-  justify-self: end;
-}
-
 .selection {
   position: absolute;
-  z-index: 99;
+  z-index: 50;
   border: 1px dotted;
   filter: invert(1);
 }
 
 .context-menu {
+  display: none;
   position: absolute;
   z-index: 101;
   margin: 0;
