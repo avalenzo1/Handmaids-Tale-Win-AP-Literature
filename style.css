@@ -13,6 +13,9 @@
 
 .window {
   background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   position: relative;
   width: 800px;
   height: 600px;
