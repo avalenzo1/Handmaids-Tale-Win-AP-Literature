@@ -78,6 +78,7 @@ button {
 
 .window > .file:focus {
   outline: none;
+  z-index: 100;
 }
 
 .window > .file:focus span {
@@ -102,6 +103,11 @@ button {
   border: inset 2px;
   border-bottom: 0;
   border-top: 0;
+}
+
+.window > .taskbar > .tools {
+  right: 2px;
+  position: absolute;
 }
 
 .window > .taskbar > .btn.start {
