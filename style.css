@@ -1,8 +1,13 @@
 :root {
   --res-x: 800px;
-  
+
   --bg-color: #008282;
-  --taskbar-bg-color: #c3c3c3;
+  --primary-color: #c3c3c3;
+}
+
+@font-face {
+  font-family: w95fa;
+  src: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/W95FA.otf?v=1653966439826f);
 }
 
 .window {
@@ -10,11 +15,35 @@
   position: relative;
   width: 800px;
   height: 600px;
-  cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/arrow.png?v=1653964914514), auto;
+  cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/arrow.png?v=1653964914514),
+    auto;
+}
+
+.window * {
+  cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/arrow.png?v=1653964914514),
+    auto;
+}
+
+.window, button {
+  font-family: w95fa;
 }
 
 .window > .taskbar {
-  width: 100%;
-  height: 30px;
-  background-color: var(--taskbar-bg-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: outset 2px;
+  padding: 2px;
+  background-color: var(--primary-color);
+}
+
+.window > .taskbar > .btn.start {
+  font-weight: bold;
+}
+
+.btn {
+  padding: 2px;
+  border: outset 2px;
+  background-color: var(--primary-color);
 }
