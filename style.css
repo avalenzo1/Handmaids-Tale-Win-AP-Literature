@@ -110,14 +110,27 @@ button {
 
 .btn {
   padding: 2px;
-  border: outset 2px;
+  border: outset 1px;
   background-color: var(--primary-color);
 }
 
 .btn:focus {
-  border: inset 2px;
+  border: inset 1px;
   outline-offset: -4px;
   outline: dotted 1px;
+}
+
+.btn-inset {
+  border: inset 1px;
+}
+
+.btn-no-focus:focus {
+  outline-offset: none;
+  outline: none;
+}
+
+.tools {
+  justify-self: end;
 }
 
 .selection {
