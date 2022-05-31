@@ -72,6 +72,10 @@ button {
   user-select: none;
 }
 
+.window > .file:focus > .ico {
+  filter: brightness(0.5);
+}
+
 .window > .taskbar .spacer {
   height: auto;
   border: inset 2px;
@@ -93,4 +97,9 @@ button {
   border: inset 2px;
   outline-offset: -4px;
   outline: dotted 1px;
+}
+
+.selection {
+  position: absolute;
+  border: 1px solid;
 }
