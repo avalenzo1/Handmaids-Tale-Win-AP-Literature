@@ -101,5 +101,7 @@ button {
 
 .selection {
   position: absolute;
-  border: 1px solid;
+  z-index: 99;
+  border: 1px dotted;
+  filter: invert(1);
 }
