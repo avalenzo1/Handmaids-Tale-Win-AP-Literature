@@ -21,6 +21,8 @@
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
+/* TODO: CHANGE WINDOW TO GRID LAYOUT */
+
 .window {
   display: flex;
   flex-direction: column;
