@@ -38,9 +38,14 @@ function init() {
         this.clientY = e.clientY - $("#main").offset().top;
         this.selectionX = parseInt($(".selection").css("left"));
         this.selectionY = parseInt($(".selection").css("top"));
-
-        $(".selection").css("width", this.clientX - this.selectionX + "px");
-        $(".selection").css("height", this.clientY - this.selectionY + "px");
+        
+        
+        if (this.clientX - this.selectionX < 0) {
+          $(".selection").css("transform", "rotateX(180deg)") 
+        }
+        
+        $(".selection").css("width", Math.abs(this.clientX - this.selectionX) + "px");
+        $(".selection").css("height", Math.abs(this.clientY - this.selectionY) + "px");
       }
     });
 
