@@ -11,6 +11,16 @@
   src: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/W95FA.otf?v=1653966439826f);
 }
 
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
 .window {
   display: flex;
   flex-direction: column;

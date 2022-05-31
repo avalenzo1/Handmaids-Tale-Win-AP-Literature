@@ -20,6 +20,8 @@ function init() {
 
   $(function () {
     let mouseDown = false;
+    
+    $(".selection").hide();
 
     $(".bg").mousedown(function (e) {
       mouseDown = true;
@@ -60,9 +62,9 @@ function init() {
 
     $(".bg").mouseup(function (e) {
       mouseDown = false;
-
-      $(".selection").hide();
+      
       $(".selection").removeAttr("style");
+      $(".selection").hide();
     });
   });
 }
