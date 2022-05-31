@@ -13,8 +13,8 @@
 }
 
 @font-face {
-  font-family: w95fa;
-  src: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/W95FA.otf?v=1653966439826f);
+  font-family: DOSVGA;
+  src: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/DOSVGA.ttf?v=1654038401691);
 }
 
 .noselect {
@@ -50,7 +50,7 @@ button {
   font-family: w95fa, monospace;
 }
 
-.window > .bg {
+.window > .desktop {
   position: absolute;
   background-color: var(--bg-color);
   left: 0; top: 0; right: 0; bottom: 0;

@@ -26,7 +26,6 @@ function init() {
 
       $(".context-menu")
         .toggle()
-
         .css({
           top: e.clientY - $(this)[0].getBoundingClientRect().top + "px",
           left: e.clientX - $(this)[0].getBoundingClientRect().left + "px",
