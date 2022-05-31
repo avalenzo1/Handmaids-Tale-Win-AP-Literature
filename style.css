@@ -3,6 +3,7 @@
 
   --bg-color: #008282;
   --primary-color: #c3c3c3;
+  --secondary-color: #0000aa;
 }
 
 @font-face {
@@ -38,6 +39,26 @@
   padding: 2px;
   background-color: var(--primary-color);
   gap: 4px;
+}
+
+.window > .file {
+  display: inline-block;
+  position: relative;
+  
+  background-color: transparent;
+  color: #ffffff;
+  border: 0;
+  text-align: center;
+}
+
+.window> .file:focus span {
+  background-color: var(--secondary-color);
+  outline-offset: -1px;
+  outline: dotted 1px;
+}
+
+.window > .file > .ico {
+
 }
 
 .window > .taskbar .spacer {
