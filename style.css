@@ -16,14 +16,17 @@
   position: relative;
   width: 800px;
   height: 600px;
+  overflow: hidden;
 }
 
-.window, .window * {
+.window,
+.window * {
   cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/arrow.png?v=1653964914514),
     auto;
 }
 
-.window, button {
+.window,
+button {
   font-family: w95fa, monospace;
 }
 
@@ -44,21 +47,26 @@
 .window > .file {
   display: inline-block;
   position: relative;
-  
+
   background-color: transparent;
   color: #ffffff;
+  padding: 4px;
   border: 0;
   text-align: center;
+  font-size: smaller;
 }
 
-.window> .file:focus span {
+.window > .file:focus span {
   background-color: var(--secondary-color);
   outline-offset: -1px;
   outline: dotted 1px;
 }
 
 .window > .file > .ico {
-
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 4px;
+  user-select: none;
 }
 
 .window > .taskbar .spacer {
@@ -75,7 +83,7 @@
 .btn {
   padding: 2px;
   border: outset 2px;
-  background-color: var(--primary-color);\
+  background-color: var(--primary-color);
 }
 
 .btn:focus {
