@@ -3,13 +3,22 @@ class Window {
     
     // https://docs.microsoft.com/en-us/windows/win32/winmsg/about-windows
     
-    $(".window").append(`
+    this.window = $(`
       <div class="window-prompt">
         <div class="title-bar">title bar</div>
         <div class="menu-bar">menu bar</div>
         <div class="client-area">client area</div>
       </div>
-    `)
+    `);
+    
+    $(this.window)
+      .draggable({
+        containment: "parent",
+        snap: ".window",
+        snapMode: "inner",
+        snapTolerance: 3,
+      })
+      .appendTo(".window")
   }
 }
 
@@ -19,7 +28,7 @@ function main() {
   
   $(".file").draggable({
     containment: "parent",
-    snap: "#main",
+    snap: ".window",
     snapMode: "inner",
     snapTolerance: 3,
   });

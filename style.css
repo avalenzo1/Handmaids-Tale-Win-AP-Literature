@@ -256,3 +256,10 @@ button {
     cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/Cursor_3.cur?v=16540481020063107), auto !important; 
 }
 
+.window-prompt {
+  border: 1px outset var(--primary-color);
+  position: absolute;
+  background-color: var(--primary-color);
+  z-index: 75;
+  top: 0;
+}
