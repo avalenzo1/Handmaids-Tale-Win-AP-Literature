@@ -40,15 +40,18 @@ function init() {
     $(".window .taskbar").hide();
     $(".window .file").hide();
     $(".window").show();
+    $(".window").addClass("cursor-progress");
     
     let startup = new Audio("https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/startup.mp3?v=1653963878874");
     
     startup.addEventListener("canplaythrough", function() {
       startup.play();
       
-      setTimeout(main(), 2000)
+      setTimeout(function() {
+        main();
+        $(".window").removeClass("cursor-progress");
+      }, 4000);
     });
-
   }
 }
 

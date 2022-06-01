@@ -220,10 +220,18 @@ button {
 }
 
 
-.cursor-default {
-    cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/arrow.png?v=1654047744014), auto; 
+.win.cursor-default,
+.win.cursor-default * {
+    cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/arrow.cur?v=1654047947664), auto !important; 
 }
 
-.cursor-default {
-    cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/Cursor_15.png?v=1654047727964), auto; 
+.cursor-pointer,
+.win.cursor-default * {
+    cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/Cursor_15.cur?v=1654048053107), auto !important; 
 }
+
+.cursor-progress,
+.win.cursor-default * {
+    cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/Cursor_3.cur?v=16540481020063107), auto !important; 
+}
+
