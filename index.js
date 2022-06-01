@@ -1,10 +1,10 @@
 // https://artage.io/en/icon-packs/original-windows-95-icons
 
-(function( $ ){
-   $.fn.getBoundingClientRect = function() {
-      return $(this)[0].getBoundingClientRect();
-   }; 
-})( jQuery );
+(function ($) {
+  $.fn.getBoundingClientRect = function () {
+    return $(this)[0].getBoundingClientRect();
+  };
+})(jQuery);
 
 function init() {
   let startup = new Audio(
@@ -56,7 +56,7 @@ function init() {
 
     $(".desktop").mousedown(function (e) {
       e.stopImmediatePropagation();
-      
+
       mouseDown = true;
       $(".selection").show();
 
@@ -74,25 +74,30 @@ function init() {
         this.selectionX = parseInt($(".selection").css("left"));
         this.selectionY = parseInt($(".selection").css("top"));
 
-        if (this.clientX - this.selectionX < 0) {
+        $(".selection").css({
+          width: this.clientX - this.selectionX + "px",
+          height: this.selectionY - this.clientY + "px",
+        });
+
+        if (this.clientX < this.selectionX) {
           $(".selection").css({
-            left: this.selectionX - Math.abs(this.clientX - this.selectionX) + "px",
-            width: this.clientX - this.selectionX) + "px"
+            left: this.selectionX - this.clientX - this.selectionX + "px",
           });
         } else {
           $(".selection").css({
             left: this.selectionX + "px",
-            width: this.clientX - this.selectionX) + "px"
           });
         }
 
-        if (this.clientY - this.selectionY < 0) {
+        if (this.clientY < this.selectionY) {
           $(".selection").css({
-            top: this.selectionY - Math.abs(this.clientY - this.selectionY) + "px",
-            height: this.selectionY - this.clientY + "px"
-        });
+            top: this.selectionY - this.clientY - this.selectionY + "px",
+          });
         } else {
-          $(".selection").css({top: this.selectionY + "px", height: this.clientY - this.selectionY + "px"});
+          $(".selection").css({
+            top: this.selectionY + "px",
+            height: this.clientY - this.selectionY + "px",
+          });
         }
       }
     });
