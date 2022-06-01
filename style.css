@@ -102,9 +102,11 @@ button {
   filter: brightness(0.5);
 }
 
+/* Window Taskbar */
+
 .window > .taskbar .spacer {
   height: auto;
-  border: inset 2px;
+  border: inset 1px;
   border-bottom: 0;
   border-top: 0;
 }

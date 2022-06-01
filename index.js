@@ -38,7 +38,7 @@ function init() {
         });
     });
 
-    $(document).bind("mousedown", function (e) {
+    $("*[use-context-menu]").bind("mousedown", function (e) {
       if (!$(e.target).parents(".context-menu").length > 0) {
         $(".context-menu").hide();
       }
@@ -75,37 +75,24 @@ function init() {
         this.selectionY = parseInt($(".selection").css("top"));
 
         if (this.clientX - this.selectionX < 0) {
-          $(".selection").css(
-            "left",
-            this.selectionX - Math.abs(this.clientX - this.selectionX) + "px"
-          );
-          $(".selection").css(
-            "width",
-            Math.abs(this.clientX - this.selectionX) + "px"
-          );
+          $(".selection").css({
+            left: this.selectionX - Math.abs(this.clientX - this.selectionX) + "px",
+            width: this.clientX - this.selectionX) + "px"
+          });
         } else {
-          $(".selection").css("left", this.selectionX + "px");
-          $(".selection").css(
-            "width",
-            Math.abs(this.clientX - this.selectionX) + "px"
-          );
+          $(".selection").css({
+            left: this.selectionX + "px",
+            width: this.clientX - this.selectionX) + "px"
+          });
         }
 
         if (this.clientY - this.selectionY < 0) {
-          $(".selection").css(
-            "top",
-            this.selectionY - Math.abs(this.clientY - this.selectionY) + "px"
-          );
-          $(".selection").css(
-            "height",
-            Math.abs(this.clientY - this.selectionY) + "px"
-          );
+          $(".selection").css({
+            top: this.selectionY - Math.abs(this.clientY - this.selectionY) + "px",
+            height: this.selectionY - this.clientY + "px"
+        });
         } else {
-          $(".selection").css("top", this.selectionY + "px");
-          $(".selection").css(
-            "height",
-            Math.abs(this.clientY - this.selectionY) + "px"
-          );
+          $(".selection").css({top: this.selectionY + "px", height: this.clientY - this.selectionY + "px"});
         }
       }
     });
