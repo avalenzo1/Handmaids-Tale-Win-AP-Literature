@@ -44,6 +44,11 @@
   font-family: DOSVGA, monospace;
 }
 
+.dos > .dos-prompt {
+  padding-left: 10px; 
+  padding-right: 10px; 
+}
+
 .dos > .dos-prompt:last-child:after {
   content: "";
   display: inline-block;
@@ -56,6 +61,14 @@
 @keyframes input-blink {
   0% {
     opacity: 1;
+  }
+  
+  50% {
+    opacity: 1;
+  }
+  
+  51% {
+    opacity: 0;
   }
   
   100% {

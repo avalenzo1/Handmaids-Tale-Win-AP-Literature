@@ -7,6 +7,23 @@
 })(jQuery);
 
 function init() {
+  
+  setTimeout(function() {
+    $(".dos").html('');
+    
+    setTimeout(function() {
+      
+    });
+  }, 1000);
+  
+  $(".dos").append(`
+        <p class="dos-prompt">Starting Windows 95...</p>
+        <br>
+        <br>
+        <p class="dos-prompt"></p>
+  `);
+  
+  function startOS() {
   let startup = new Audio(
     "https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/startup.mp3?v=1653963878874"
   );
@@ -108,6 +125,7 @@ function init() {
       $(".selection").hide();
     });
   });
+  }
 }
 
 $(".dos").one("keyup", function () {
