@@ -12,6 +12,10 @@ function main() {
   $(".file").mousedown(function () {
     $(this).focus();
   });
+  
+  $(".file").dblclick(function () {
+    $(this).attr("file-name");
+  });
 
   $(function () {
     // https://stackoverflow.com/a/20471268 SRC
