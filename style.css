@@ -44,6 +44,25 @@
   font-family: DOSVGA, monospace;
 }
 
+.dos > .dos-prompt:last-child:after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 5px;
+  background-color: #ffffff;
+  animation: input-blink linear 1s infinite;
+}
+
+@keyframes input-blink {
+  0% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 0;
+  }
+}
+
 .window,
 .window * {
   cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/arrow.png?v=1653964914514),
