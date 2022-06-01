@@ -11,7 +11,7 @@ function init() {
     "https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/startup.mp3?v=1653963878874"
   );
 
-  // startup.play();
+  startup.play();
 
   $(".file").draggable({
     containment: "parent",
@@ -50,25 +50,12 @@ function init() {
   });
 
   $(function () {
-    let mouseDown = false;
-
-    $(".selection").hide();
-
-    $(".desktop").mousedown(function (e) {
-      e.stopImmediatePropagation();
-
-      mouseDown = true;
-      $(".selection").show();
-
-      this.clientX = e.clientX - $("#main").getBoundingClientRect().left;
-      this.clientY = e.clientY - $("#main").getBoundingClientRect().top;
-
-      $(".selection").css("left", this.clientX + "px");
-      $(".selection").css("top", this.clientY + "px");
-    });
-
-    $(".desktop").mousemove(function (e) {
-      if (mouseDown) {
+    // https://stackoverflow.com/a/30985975/16557976 THANK YOU!!!!!!!!!!!!
+    
+    let startX = 0;
+    let startY = 0;
+    
+    function selectionBox(e) {
         this.clientX = e.clientX - $("#main").getBoundingClientRect().left;
         this.clientY = e.clientY - $("#main").getBoundingClientRect().top;
         this.selectionX = parseInt($(".selection").css("left"));
@@ -79,58 +66,50 @@ function init() {
           height: this.clientY - this.selectionY + "px",
         });
         
-          $(this).height(Math.abs(parseInt(e.pageY) - parseInt(div.css("top"))));
-          $(this).width(Math.abs(parseInt(e.pageX) - parseInt(div.css("left"))));
+          $(".selection").height(Math.abs(parseInt(this.clientY) - parseInt($(".selection").css("top"))));
+          $(".selection").width(Math.abs(parseInt(this.clientX) - parseInt($(".selection").css("left"))));
 
 
-          if (parseInt(e.pageY) < startY) {
-            $(this).css({
-              "top": e.pageY
+          if (parseInt(this.clientY) < startY) {
+            $(".selection").css({
+              "top": this.clientY
             });
-            $(this).height(Math.abs(parseInt(e.pageY) - startY));
+            $(".selection").height(Math.abs(parseInt(this.clientY) - startY));
           }
-          if (parseInt(e.pageX) < startX) {
-            $(this).css({
-              "left": e.pageX
+          if (parseInt(this.clientX) < startX) {
+            $(".selection").css({
+              "left": this.clientX
             });
-            $(this).width(Math.abs(parseInt(e.pageX) - startX));
+            $(".selection").width(Math.abs(parseInt(this.clientX) - startX));
           }
+    }
 
-        if (this.clientX < this.selectionX) {
-          // $(".selection").css({
-          //   left: this.selectionX - this.clientX - this.selectionX + "px",
-          // });
-          console.log("overflow-x");
-        } else {
-          // $(".selection").css({
-          //   left: this.selectionX + "px",
-          // });
-          console.log("no-overflow-x");
-        }
+    $(".desktop").mousedown(function (e) {
+      e.stopImmediatePropagation();
+      
+      $(".selection").show();
 
-        if (this.clientY < this.selectionY) {
-          // $(".selection").css({
-          //   top: this.selectionY - this.clientY - this.selectionY + "px",
-          // });
-          console.log("overflow-y");
-        } else {
-          // $(".selection").css({
-          //   top: this.selectionY + "px",
-          // });
-          console.log("no-overflow-y");
-        }
-      }
+      this.clientX = e.clientX - $("#main").getBoundingClientRect().left;
+      this.clientY = e.clientY - $("#main").getBoundingClientRect().top;
+      
+      startX = this.clientX;
+      startY = this.clientY;
+
+      $(".selection").css("left", this.clientX + "px");
+      $(".selection").css("top", this.clientY + "px");
+      
+      $(this).on("mousemove", selectionBox);
     });
 
     $(".desktop").mouseup(function (e) {
-      mouseDown = false;
-
+      $(this).off("mousemove", selectionBox);
+      
       $(".selection").removeAttr("style");
       $(".selection").hide();
     });
   });
 }
 
-$("#main").one("click", function () {
+$("#main").one("keydown", function () {
   init();
 });
