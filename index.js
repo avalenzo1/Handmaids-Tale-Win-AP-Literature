@@ -52,6 +52,10 @@ function init() {
         $(".window").removeClass("cursor-progress");
       }, 4000);
     });
+    
+    startup.addEventListener("error", function() {
+      $(".window").newDialog
+    });
   }
 }
 

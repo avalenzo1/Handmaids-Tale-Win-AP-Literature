@@ -3,8 +3,7 @@
 
   --bg-color: #008282;
   --primary-color: #c3c3c3;
-  --secondary-color: #0000aa;
-  --active-color: #000180;
+  --active-color: #0000a8;
 }
 
 @font-face {
@@ -42,6 +41,11 @@
 .dos {
   color: #ffffff;
   font-family: DOSVGA, monospace;
+}
+
+.dos ::selection {
+  background: #ffffff;
+  color: #000000;
 }
 
 .dos > .dos-prompt {
@@ -84,6 +88,11 @@
 
 .splash-screen img {
   width: 100%;
+}
+
+.window ::selection {
+  background-color: var(--active-color);
+  color: #ffffff;
 }
 
 .window,
@@ -136,7 +145,7 @@ button {
 }
 
 .window > .desktop > .file:focus span {
-  background-color: var(--secondary-color);
+  background-color: var(--active-color);
   outline-offset: -1px;
   outline: dotted 1px;
 }
