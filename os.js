@@ -1,3 +1,18 @@
+class Window {
+  constructor() {
+    
+    // https://docs.microsoft.com/en-us/windows/win32/winmsg/about-windows
+    
+    $(".window").append(`
+      <div class="window-prompt">
+        <div class="title-bar">title bar</div>
+        <div class="menu-bar">menu bar</div>
+        <div class="client-area">client area</div>
+      </div>
+    `)
+  }
+}
+
 function main() {
   $(".window .taskbar").show();
   $(".window .file").show();
@@ -14,7 +29,11 @@ function main() {
   });
   
   $(".file").dblclick(function () {
-    $(this).attr("file-name");
+    console.log("sdg")
+    
+    this.app = $(this).attr("app");
+    
+    new Window();
   });
 
   $(function () {
@@ -80,7 +99,7 @@ function main() {
       }
     }
 
-    $(".desktop").mousedown(function (e) {
+    $(".desktop::before").mousedown(function (e) {
       e.stopImmediatePropagation();
 
       $(".selection").show();

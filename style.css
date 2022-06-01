@@ -108,6 +108,13 @@ button {
 }
 
 .window > .desktop {
+  position: relative;
+  width: inherit;
+  height: inherit;
+}
+
+.window > .desktop::before {
+  content: "";
   position: absolute;
   background-color: var(--bg-color);
   left: 0; top: 0; right: 0; bottom: 0;
