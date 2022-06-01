@@ -61,6 +61,12 @@ function init() {
 
 $(".dos").show();
 
-$(".dos").one("click keyup", function () {
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  $(".dos").one("click", function () {
     init();
   });
+} else {
+  $(".dos").one("keyup", function () {
+    init();
+  });
+}

@@ -1,24 +1,29 @@
 class Window {
-  constructor() {
-    
+  constructor(title) {
     // https://docs.microsoft.com/en-us/windows/win32/winmsg/about-windows
+    this.application;
+    this.title = title;
     
     this.window = $(`
       <div class="window-prompt">
-        <div class="title-bar">title bar</div>
+        <div class="title-bar">${this.title} <button class="btn">_</button> <button class="btn">O</button> <button class="btn">X</button> </div>
         <div class="menu-bar">menu bar</div>
         <div class="client-area">client area</div>
       </div>
     `);
     
     $(this.window)
+      .appendTo(".window")
       .draggable({
         containment: "parent",
         snap: ".window",
         snapMode: "inner",
         snapTolerance: 3,
       })
-      .appendTo(".window")
+  }
+  
+  setApplication(appName) {
+    this.application = appName;
   }
 }
 
@@ -38,11 +43,8 @@ function main() {
   });
   
   $(".file").dblclick(function () {
-    console.log("sdg")
-    
-    this.app = $(this).attr("app");
-    
-    new Window();
+    new Window()
+      .app($(this).attr("app"));
   });
 
   $(function () {

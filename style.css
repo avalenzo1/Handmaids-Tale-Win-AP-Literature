@@ -260,6 +260,13 @@ button {
   border: 1px outset var(--primary-color);
   position: absolute;
   background-color: var(--primary-color);
+  padding: 2px;
   z-index: 75;
   top: 0;
+}
+
+.window-prompt > .title-bar {
+  background-color: var(--active-color);
+  color: #ffffff;
+  padding: 2px;
 }
