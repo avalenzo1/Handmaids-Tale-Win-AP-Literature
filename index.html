@@ -18,57 +18,65 @@
     <title>Handmaid's Tale Project</title>
   </head>
   <body>
-    <div class="window" id="main">
-      <div class="desktop" use-context-menu>
-        <div class="selection"></div>
-        <div class="file no-select" tabindex="0" readonly>
-          <img
-            class="ico no-select"
-            src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/computer-0.png?v=1653967598572"
-          />
-          <span> My Computer </span>
-        </div>
+    <main id="main">
+      <div class="dos" tabindex="0">
+        <p>Press any key to continue...</p>
+        <p>Press any key to continue...</p>
+      </div>
 
-        <div class="file" tabindex="0" readonly>
-          <img
-            class="ico"
-            src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/bin-0.png?v=1653969249131"
-          />
-          <span>Recycle Bin</span>
+      <div class="splash-screen">
+        <img
+          src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/win-splash-screen.gif?v=1654013821736"
+        />
+      </div>
+
+      <div class="window">
+        <div class="desktop" use-context-menu>
+          <div class="selection"></div>
+          <div class="file no-select" tabindex="0" readonly>
+            <img
+              class="ico no-select"
+              src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/computer-0.png?v=1653967598572"
+            />
+            <span>My Computer</span>
+          </div>
+
+          <div class="file" tabindex="0" readonly>
+            <img
+              class="ico"
+              src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/bin-0.png?v=1653969249131"
+            />
+            <span>Recycle Bin</span>
+          </div>
+        </div>
+        <ul class="context-menu">
+          <li class="list-item">Arrange Icons</li>
+          <li class="list-item">Line Up Icons</li>
+          <hr />
+          <li class="list-item">Paste</li>
+          <li class="list-item">Paste Shortcut</li>
+          <hr />
+          <li class="list-item">New</li>
+          <hr />
+          <li class="list-item">Properties</li>
+        </ul>
+
+        <div class="taskbar">
+          <button class="btn start">
+            <img
+              width="14"
+              src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/start.png?v=1654012444191"
+            />
+            Start
+          </button>
+          <div class="spacer"></div>
+
+          <div class="spacer"></div>
+          <div class="tools">
+            <button class="btn btn-inset btn-no-focus">5:05 PM</button>
+          </div>
         </div>
       </div>
-      <ul class="context-menu">
-        <li class="list-item">Arrange Icons</li>
-        <li class="list-item">Line Up Icons</li>
-        <hr />
-        <li class="list-item">Paste</li>
-        <li class="list-item">Paste Shortcut</li>
-        <hr />
-        <li class="list-item">New</li>
-        <hr />
-        <li class="list-item">Properties</li>
-      </ul>
-
-      <div class="taskbar">
-        <button class="btn start">
-          <img
-            width="14"
-            src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/start.png?v=1654012444191"
-          />
-          Start
-        </button>
-        <div class="spacer"></div>
-
-        <div class="spacer"></div>
-        <div class="tools">
-          <button class="btn btn-inset btn-no-focus">5:05 PM</button>
-        </div>
-      </div>
-    </div>
-    <div class="splash-screen">
-      <img
-        src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/win-splash-screen.gif?v=1654013821736"
-      />
-    </div>
+    </main>
   </body>
 </html>

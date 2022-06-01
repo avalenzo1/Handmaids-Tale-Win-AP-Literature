@@ -110,6 +110,6 @@ function init() {
   });
 }
 
-$("#main").one("keydown", function () {
+$(".dos").one("keyup", function () {
   init();
 });

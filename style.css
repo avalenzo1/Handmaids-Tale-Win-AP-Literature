@@ -29,11 +29,19 @@
 
 /* TODO: CHANGE WINDOW TO GRID LAYOUT */
 
+.dos,
+.splash-screen,
 .window {
   position: relative;
   width: 800px;
   height: 600px;
   overflow: hidden;
+}
+
+.dos {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: DOSVGA, monospace;
 }
 
 .window,
