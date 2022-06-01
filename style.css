@@ -36,6 +36,7 @@
   width: 800px;
   height: 600px;
   overflow: hidden;
+  display: none;
 }
 
 .dos {

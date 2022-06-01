@@ -34,8 +34,8 @@ function init() {
   }, 1000);
 
   function startOS() {
-    $(".dos").hide();
-    $(".splash-screen").hide();
+    $(".dos").remove();
+    $(".splash-screen").remove();
     
     $(".window .taskbar").hide();
     $(".window .file").hide();
@@ -54,11 +54,19 @@ function init() {
     });
     
     startup.addEventListener("error", function() {
-      $(".window").newDialog
+      $(".window").append("<p>Error</p>")
     });
   }
 }
 
-$(".dos").one("keyup", function () {
-  init();
-});
+$(".dos").show();
+
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  $(".dos").one("click", function () {
+    init();
+  });
+} else {
+  $(".dos").one("keyup", function () {
+    init();
+  });
+}
