@@ -76,28 +76,48 @@ function init() {
 
         $(".selection").css({
           width: this.clientX - this.selectionX + "px",
-          height: this.selectionY - this.clientY + "px",
+          height: this.clientY - this.selectionY + "px",
         });
+        
+          $(this).height(Math.abs(parseInt(e.pageY) - parseInt(div.css("top"))));
+          $(this).width(Math.abs(parseInt(e.pageX) - parseInt(div.css("left"))));
+
+
+          if (parseInt(e.pageY) < startY) {
+            $(this).css({
+              "top": e.pageY
+            });
+            $(this).height(Math.abs(parseInt(e.pageY) - startY));
+          }
+          if (parseInt(e.pageX) < startX) {
+            $(this).css({
+              "left": e.pageX
+            });
+            $(this).width(Math.abs(parseInt(e.pageX) - startX));
+          }
 
         if (this.clientX < this.selectionX) {
-          $(".selection").css({
-            left: this.selectionX - this.clientX - this.selectionX + "px",
-          });
+          // $(".selection").css({
+          //   left: this.selectionX - this.clientX - this.selectionX + "px",
+          // });
+          console.log("overflow-x");
         } else {
-          $(".selection").css({
-            left: this.selectionX + "px",
-          });
+          // $(".selection").css({
+          //   left: this.selectionX + "px",
+          // });
+          console.log("no-overflow-x");
         }
 
         if (this.clientY < this.selectionY) {
-          $(".selection").css({
-            top: this.selectionY - this.clientY - this.selectionY + "px",
-          });
+          // $(".selection").css({
+          //   top: this.selectionY - this.clientY - this.selectionY + "px",
+          // });
+          console.log("overflow-y");
         } else {
-          $(".selection").css({
-            top: this.selectionY + "px",
-            height: this.clientY - this.selectionY + "px",
-          });
+          // $(".selection").css({
+          //   top: this.selectionY + "px",
+          // });
+          console.log("no-overflow-y");
         }
       }
     });
