@@ -3,25 +3,33 @@ class Window {
     // https://docs.microsoft.com/en-us/windows/win32/winmsg/about-windows
     this.application;
     this.title = title;
-    
+
     this.window = $(`
       <div class="window-prompt">
-        <div class="title-bar">${this.title} <button class="btn">_</button> <button class="btn">O</button> <button class="btn">X</button> </div>
-        <div class="menu-bar">menu bar</div>
-        <div class="client-area">client area</div>
+      <div class="title-bar">${this.title}
+        <div class="window-options">
+          <button class="btn">_</button>
+          <button class="btn">O</button>
+          <button class="btn">X</button>
+        </div>
       </div>
+      <div class="menu-bar">
+        <button class="btn">
+          Hello
+        </button>
+      </div>
+      <div class="client-area">client area</div>
+    </div>
     `);
-    
-    $(this.window)
-      .appendTo(".window")
-      .draggable({
-        containment: "parent",
-        snap: ".window",
-        snapMode: "inner",
-        snapTolerance: 3,
-      })
+
+    $(this.window).appendTo(".window").draggable({
+      containment: "parent",
+      snap: ".window",
+      snapMode: "inner",
+      snapTolerance: 3,
+    });
   }
-  
+
   setApplication(appName) {
     this.application = appName;
   }
@@ -30,7 +38,7 @@ class Window {
 function main() {
   $(".window .taskbar").show();
   $(".window .file").show();
-  
+
   $(".file").draggable({
     containment: "parent",
     snap: ".window",
@@ -41,10 +49,9 @@ function main() {
   $(".file").mousedown(function () {
     $(this).focus();
   });
-  
+
   $(".file").dblclick(function () {
-    new Window()
-      .app($(this).attr("app"));
+    new Window().app($(this).attr("app"));
   });
 
   $(function () {
