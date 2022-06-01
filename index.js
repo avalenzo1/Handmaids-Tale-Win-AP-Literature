@@ -46,7 +46,7 @@ function init() {
     startup.addEventListener("canplaythrough", function() {
       startup.play();
       
-      main();
+      setTimeout(main(), 2000)
     });
 
   }

@@ -218,3 +218,12 @@ button {
   background-color: var(--active-color);
   color: white;
 }
+
+
+.cursor-default {
+    cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/arrow.png?v=1654047744014), auto; 
+}
+
+.cursor-default {
+    cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/Cursor_15.png?v=1654047727964), auto; 
+}
