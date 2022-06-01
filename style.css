@@ -32,6 +32,7 @@
 .dos,
 .splash-screen,
 .window {
+  background-color: #000000;
   position: relative;
   width: 800px;
   height: 600px;
@@ -39,7 +40,6 @@
 }
 
 .dos {
-  background-color: #000000;
   color: #ffffff;
   font-family: DOSVGA, monospace;
 }
@@ -74,6 +74,16 @@
   100% {
     opacity: 0;
   }
+}
+
+.splash-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash-screen img {
+  width: 100%;
 }
 
 .window,
