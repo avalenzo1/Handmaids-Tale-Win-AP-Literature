@@ -6,7 +6,7 @@ class Window {
     this.windowIsMaximized = false;
 
     this.window = $(`
-      <div class="window-prompt">
+      <div class="window-prompt" tabindex="0">
         <div class="title-bar">${this.title}
           <div class="window-options">
             <button class="btn btn-minimize">_</button>

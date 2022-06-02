@@ -265,11 +265,24 @@ button {
   top: 0;
 }
 
+.window-prompt:active {
+  z-index: 76;
+}
+
+.window-prompt:focus {
+  z-index: 76;
+  outline: none;
+}
+
 .window-prompt > .title-bar {
   display: flex;
-  background-color: var(--active-color);
+  background-color: #000000;
   color: #ffffff;
   padding: 2px;
+}
+
+.window-prompt:focus > .title-bar {
+  background-color: var(--active-color);
 }
 
 .window-prompt > .title-bar > .window-options {
