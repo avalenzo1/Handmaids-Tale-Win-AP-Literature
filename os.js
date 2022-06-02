@@ -1,3 +1,7 @@
+let Taskbar = (function() {
+  $(".programs")
+});
+
 class Window {
   constructor(title) {
     // https://docs.microsoft.com/en-us/windows/win32/winmsg/about-windows
@@ -43,7 +47,7 @@ class Window {
         if (this.windowIsMaximized) {
           $(this).closest('.window-prompt').removeAttr("style");
         } else {
-          $(this).closest('.window-prompt').css({ top: 0, left: 0, right: 0, bottom: 0 });
+          $(this).closest('.window-prompt').css({width: '-webkit-fill-available', height: '-webkit-fill-available'});
         }
 
         this.windowIsMaximized = !this.windowIsMaximized;

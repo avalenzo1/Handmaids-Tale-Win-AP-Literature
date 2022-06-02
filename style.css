@@ -261,6 +261,8 @@ button {
   position: absolute;
   background-color: var(--primary-color);
   padding: 2px;
+  width: 600px;
+  height: 400px;
   z-index: 75;
   top: 0;
 }
@@ -298,6 +300,6 @@ button {
   background-color: #ffffff;
   color: #000000;
   padding: 2px;
-  width: 400px;
-  height: 400px;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
 }
