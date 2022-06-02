@@ -1,7 +1,3 @@
-let Taskbar = (function() {
-  $(".programs")
-});
-
 class Window {
   constructor(title) {
     // https://docs.microsoft.com/en-us/windows/win32/winmsg/about-windows
@@ -9,6 +5,7 @@ class Window {
     this.title = title;
     this.windowIsMaximized = false;
     this.uniqueID = 'id-' + Math.random().toString(16).slice(2); // https://stackoverflow.com/a/19842865/16557976
+    $(".taskbar .programs").append(`<button class="btn" program-id="${this.uniqueID}">${this.title}</button>`);
 
     this.window = $(`
       <div id="${this.uniqueID}" class="window-prompt" tabindex="0">
@@ -34,7 +31,7 @@ class Window {
       snap: ".window",
       snapMode: "inner",
       snapTolerance: 3,
-    });
+    }); // resizable();
     
     let fn = this;
 
@@ -48,6 +45,8 @@ class Window {
 
     $(`#${this.uniqueID} .btn-close`).click(function() {
       fn.closeWindow();
+      $(``.taskbar .programs`)
+      $(".taskbar .programs").append(`<button class="btn" program-id="${this.uniqueID}">${this.title}</button>`);
     });
   }
 
@@ -56,14 +55,14 @@ class Window {
   }
 
   minimizeWindow() {
-    $(this.window).hide();
+    $(".taskbar .programs")
   }
 
   maximizeWindow() {
     if (this.windowIsMaximized) {
       $(this.window).removeAttr("style");
     } else {
-      $(this.window).css({width: '-webkit-fill-available', height: '-webkit-fill-available'});
+      $(this.window).css({left: 0, top: 0, width: '-webkit-fill-available', height: '-webkit-fill-available'});
     }
 
     this.windowIsMaximized = !this.windowIsMaximized;

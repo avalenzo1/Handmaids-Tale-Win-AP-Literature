@@ -271,10 +271,11 @@ button {
   background-color: var(--primary-color);
   padding: 2px;
   min-width: fit-content;
-  width: 208px;
+  width: 600px;
   height: 400px;
   z-index: 75;
-  top: 0;
+  top: 10px;
+  left: 10px;
 }
 
 .window-prompt:active {
