@@ -18,7 +18,7 @@ class Window {
         </div>
         <div class="menu-bar">
           <button class="btn">
-            Hello
+            Options
           </button>
         </div>
         <div class="client-area">client area</div>

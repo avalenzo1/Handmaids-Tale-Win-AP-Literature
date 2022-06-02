@@ -192,18 +192,18 @@ button {
 
 .btn {
   padding: 2px;
-  border: outset 2px;
+  border: var(--outset-border);
   background-color: var(--primary-color);
 }
 
 .btn:active {
-  border: var(-inset);
+  border: var(--inset-border);
   outline-offset: -4px;
   outline: dotted 1px;
 }
 
 .btn-inset {
-  border: inset 2px;
+  border: var(--inset-border);
 }
 
 .btn-no-focus:focus {
