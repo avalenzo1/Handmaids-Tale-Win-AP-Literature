@@ -4,6 +4,9 @@
   --bg-color: #008282;
   --primary-color: #c3c3c3;
   --active-color: #0000a8;
+  
+  --inset-border: inset 2px;
+  --outset-border: outset 2px;
 }
 
 @font-face {
@@ -194,7 +197,7 @@ button {
 }
 
 .btn:active {
-  border: inset 2px;
+  border: var(-inset);
   outline-offset: -4px;
   outline: dotted 1px;
 }
@@ -211,7 +214,7 @@ button {
 .selection {
   position: absolute;
   z-index: 50;
-  border: 2px dotted;
+  border: 1px dotted;
   filter: invert(1);
 }
 
@@ -222,7 +225,7 @@ button {
   margin: 0;
   list-style-type: none;
   padding: 1px;
-  border: outset 2px;
+  border: var(--outset-border);
   background-color: var(--primary-color);
 }
 
