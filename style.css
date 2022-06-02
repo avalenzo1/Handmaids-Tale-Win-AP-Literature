@@ -132,7 +132,7 @@ button {
   padding: 2px;
   background-color: var(--primary-color);
   gap: 4px;
-  z-index: 50;
+  z-index: 100;
 }
 
 .window > .desktop > .file {
@@ -173,7 +173,7 @@ button {
 
 .window > .taskbar .spacer {
   height: auto;
-  border: inset 1px;
+  border: inset 2px;
   border-bottom: 0;
   border-top: 0;
 }
@@ -189,18 +189,18 @@ button {
 
 .btn {
   padding: 2px;
-  border: outset 1px;
+  border: outset 2px;
   background-color: var(--primary-color);
 }
 
 .btn:active {
-  border: inset 1px;
+  border: inset 2px;
   outline-offset: -4px;
-  outline: dotted 1px;
+  outline: dotted 2px;
 }
 
 .btn-inset {
-  border: inset 1px;
+  border: inset 2px;
 }
 
 .btn-no-focus:focus {
@@ -211,7 +211,7 @@ button {
 .selection {
   position: absolute;
   z-index: 50;
-  border: 1px dotted;
+  border: 2px dotted;
   filter: invert(1);
 }
 
@@ -222,7 +222,7 @@ button {
   margin: 0;
   list-style-type: none;
   padding: 1px;
-  border: outset 1px;
+  border: outset 2px;
   background-color: var(--primary-color);
 }
 

@@ -1,8 +1,8 @@
 class Window {
-  constructor() {
+  constructor(title) {
     // https://docs.microsoft.com/en-us/windows/win32/winmsg/about-windows
     this.application;
-    this.title = $("");
+    this.title = title;
 
     this.window = $(`
       <div class="window-prompt">
@@ -50,8 +50,8 @@ function main() {
     $(this).focus();
   });
 
-  $(".file").dblclick(function () {
-    new Window().app($(this).attr("app"));
+  $(".file").dblclick(function (e) {
+    new Window().app($(e.currentTarget).attr("app") + '-' + $(e.currentTarget).attr("file-name"));
   });
 
   $(function () {
