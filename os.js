@@ -8,10 +8,11 @@ class Window {
     this.application;
     this.title = title;
     this.windowIsMaximized = false;
+    this.uniqueID = 'id-' + Math.random().toString(16).slice(2); // https://stackoverflow.com/a/19842865/16557976
 
     this.window = $(`
       <div class="window-prompt" tabindex="0">
-        <div class="title-bar">${this.title}
+        <div id="${this.uniqueID}" class="title-bar">${this.title}
           <div class="window-options">
             <button class="btn btn-minimize">_</button>
             <button class="btn btn-maximize">O</button>
@@ -35,29 +36,17 @@ class Window {
       snapTolerance: 3,
     });
 
-    $(this.window)
-      .find(".btn-minimize")
-      .click(function() {
-        $(this).closest('.window-prompt').hide();
-      });
+    $(`#${this.uniqueID} .btn-minimize`).click(function() {
+      
+    });
 
-    $(this.window)
-      .find(".btn-maximize")
-      .click(function () {
-        if (this.windowIsMaximized) {
-          $(this).closest('.window-prompt').removeAttr("style");
-        } else {
-          $(this).closest('.window-prompt').css({width: '-webkit-fill-available', height: '-webkit-fill-available'});
-        }
+    $(`#${this.uniqueID} .btn-maximize`).click(function() {
+      
+    });
 
-        this.windowIsMaximized = !this.windowIsMaximized;
-      });
-
-    $(this.window)
-      .find(".btn-close")
-      .click(function () {
-        $(this).closest('.window-prompt').remove();
-      });
+    $(`#${this.uniqueID} .btn-close`).click(function() {
+      
+    });
   }
 
   setApplication(appName) {
@@ -76,7 +65,7 @@ class Window {
     if (this.windowIsMaximized) {
       $(this).removeAttr("style");
     } else {
-      $(this).css({ top: 0, left: 0, right: 0, bottom: 0 });
+      $(this).css({width: '-webkit-fill-available', height: '-webkit-fill-available'});
     }
 
     this.windowIsMaximized = !this.windowIsMaximized;
