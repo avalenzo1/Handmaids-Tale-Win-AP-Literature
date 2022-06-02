@@ -263,15 +263,15 @@ button {
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    "."
-    "."
-    ".";
-  
+      "."
+      "."
+      ".";
   border: 2px outset var(--primary-color);
   position: absolute;
   background-color: var(--primary-color);
   padding: 2px;
-  width: 600px;
+  min-width: fit-content;
+  width: 208px;
   height: 400px;
   z-index: 75;
   top: 0;

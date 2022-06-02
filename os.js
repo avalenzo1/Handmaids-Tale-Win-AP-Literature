@@ -61,9 +61,9 @@ class Window {
 
   maximizeWindow() {
     if (this.windowIsMaximized) {
-      $(this).removeAttr("style");
+      $(this.window).removeAttr("style");
     } else {
-      $(this).css({width: '-webkit-fill-available', height: '-webkit-fill-available'});
+      $(this.window).css({width: '-webkit-fill-available', height: '-webkit-fill-available'});
     }
 
     this.windowIsMaximized = !this.windowIsMaximized;

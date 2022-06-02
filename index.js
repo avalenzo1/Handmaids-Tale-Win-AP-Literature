@@ -15,6 +15,12 @@ $(".splash-screen").hide();
 $(".window").hide();
 
 function init() {
+  let timeout = [1000, 2000, 2000, 2500, 4000];
+  
+  if (localStorage.getItem("remember") == 1) {
+    timeout = [100, 20, 20, 100, 0]
+  }
+  
   setTimeout(function () {
     $(".dos").html("");
 
@@ -33,10 +39,10 @@ function init() {
         setTimeout(function () {
           $(".splash-screen").hide();
           startOS();
-        }, 2500);
-      }, 2000);
-    }, 2000);
-  }, 1000);
+        }, timeout[3]);
+      }, timeout[2]);
+    }, timeout[1]);
+  }, timeout[0]);
 
   function startOS() {
     $(".dos").remove();
@@ -55,7 +61,7 @@ function init() {
       setTimeout(function() {
         main();
         $(".window").removeClass("cursor-progress");
-      }, 4000);
+      }, timeout[4]);
     });
   }
 }
@@ -71,3 +77,13 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     init();
   });
 }
+
+// the buttons below determine if to remember/forget user
+
+$(".remember-btn").click(function() {
+  localStorage.setItem("remember", 1);
+});
+
+$(".forget-btn").click(function() {
+  localStorage.setItem("remember", 0);
+});
