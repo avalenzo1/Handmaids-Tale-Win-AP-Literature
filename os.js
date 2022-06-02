@@ -23,16 +23,25 @@ class Window {
       </div>
     `);
     
-    this.minimizeWindow();
-    this.maximizeWindow();
-    this.closeWindow();
-
-    $(this.window).appendTo(".window").draggable({
+    this.window = $(this.window).appendTo(".window").draggable({
       containment: "parent",
       snap: ".window",
       snapMode: "inner",
       snapTolerance: 3,
     });
+    
+    $(this.window).find(".btn-minimize").click(function() {
+      this.minimizeWindow();
+    });
+    
+    $(this.window).find(".btn-maximize").click(function() {
+      this.closeWindow();
+    });
+    
+    $(this.window).find(".btn-close").click(function() {
+      this.maximizeWindow();
+    });
+
   }
 
   setApplication(appName) {
@@ -40,19 +49,14 @@ class Window {
   }
   
   closeWindow() {
-    $(this.window).find(".btn-close").click(function() {
-      $(this.window).remove();
-    });
+    $(this.window).remove();
   }
   
   minimizeWindow() {
-    $(this.window).find(".btn-minimize").click(function() {
-      $(this.window).hide();
-    });
+    $(this).hide();
   }
   
   maximizeWindow() {
-    $(this.window).find(".btn-maximize").click(function() {
     if (this.windowIsMaximized) {
       $(this).removeAttr("style");
     } else {
@@ -60,8 +64,6 @@ class Window {
     }
     
     this.windowIsMaximized = !this.windowIsMaximized;
-    
-    });
   }
 }
 
