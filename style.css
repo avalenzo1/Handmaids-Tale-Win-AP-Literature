@@ -196,7 +196,7 @@ button {
 .btn:active {
   border: inset 2px;
   outline-offset: -4px;
-  outline: dotted 2px;
+  outline: dotted 1px;
 }
 
 .btn-inset {

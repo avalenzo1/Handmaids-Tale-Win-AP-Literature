@@ -50,8 +50,9 @@ function main() {
     $(this).focus();
   });
 
-  $(".file").dblclick(function (e) {
-    new Window().app($(e.currentTarget).attr("app") + '-' + $(e.currentTarget).attr("file-name"));
+  $(".file").click(function (e) {
+    console.log($(this));
+    new Window().app($(this).attr("app") + '-' + $(this).attr("file-name"));
   });
 
   $(function () {

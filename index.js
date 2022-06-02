@@ -54,7 +54,7 @@ function init() {
     });
     
     startup.addEventListener("error", function() {
-      $(".window").append("<p>Error</p>")
+      console.log("Error");
     });
   }
 }
