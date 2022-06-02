@@ -23,17 +23,9 @@ class Window {
       </div>
     `);
     
-    $(this.window).find(".btn-minimize").click(function() {
-      this.minimizeWindow();
-    });
-    
-    $(this.window).find(".btn-maximize").click(function() {
-      this.closeWindow();
-    });
-    
-    $(this.window).find(".btn-close").click(function() {
-      this.maximizeWindow();
-    });
+    this.minimizeWindow();
+    this.maximizeWindow();
+    this.closeWindow();
 
     $(this.window).appendTo(".window").draggable({
       containment: "parent",
@@ -48,21 +40,28 @@ class Window {
   }
   
   closeWindow() {
-    $(this.window).remove();
+    $(this.window).find(".btn-close").click(function() {
+      $(this.window).remove();
+    });
   }
   
   minimizeWindow() {
-    $(this).hide();
+    $(this.window).find(".btn-minimize").click(function() {
+      $(this.window).hide();
+    });
   }
   
   maximizeWindow() {
+    $(this.window).find(".btn-maximize").click(function() {
     if (this.windowIsMaximized) {
-      
+      $(this).removeAttr("style");
     } else {
       $(this).css({top: 0, left: 0, right: 0, bottom: 0});
     }
     
     this.windowIsMaximized = !this.windowIsMaximized;
+    
+    });
   }
 }
 
