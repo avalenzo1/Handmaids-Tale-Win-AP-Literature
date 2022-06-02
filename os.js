@@ -11,8 +11,8 @@ class Window {
     this.uniqueID = 'id-' + Math.random().toString(16).slice(2); // https://stackoverflow.com/a/19842865/16557976
 
     this.window = $(`
-      <div class="window-prompt" tabindex="0">
-        <div id="${this.uniqueID}" class="title-bar">${this.title}
+      <div id="${this.uniqueID}" class="window-prompt" tabindex="0">
+        <div class="title-bar">${this.title}
           <div class="window-options">
             <button class="btn btn-minimize">_</button>
             <button class="btn btn-maximize">O</button>
@@ -35,17 +35,19 @@ class Window {
       snapMode: "inner",
       snapTolerance: 3,
     });
+    
+    let fn = this;
 
     $(`#${this.uniqueID} .btn-minimize`).click(function() {
-      
+      fn.minimizeWindow();
     });
 
     $(`#${this.uniqueID} .btn-maximize`).click(function() {
-      
+      fn.maximizeWindow();
     });
 
     $(`#${this.uniqueID} .btn-close`).click(function() {
-      
+      fn.closeWindow();
     });
   }
 
@@ -53,12 +55,8 @@ class Window {
     this.application = appName;
   }
 
-  closeWindow() {
-    $(this.window).remove();
-  }
-
   minimizeWindow() {
-    $(this).hide();
+    $(this.window).hide();
   }
 
   maximizeWindow() {
@@ -69,6 +67,10 @@ class Window {
     }
 
     this.windowIsMaximized = !this.windowIsMaximized;
+  }
+  
+  closeWindow() {
+    $(this.window).remove();
   }
 }
 
