@@ -3,24 +3,28 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js" defer></script>
+    <script
+      src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"
+      defer
+    ></script>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous" defer 
+      crossorigin="anonymous"
+      defer
     ></script>
     <script
       src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"
       integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA="
-      crossorigin="anonymous" defer
+      crossorigin="anonymous"
+      defer
     ></script>
-    <script src="/jquery.ui.touch-punch.min.js"defer></script>
+    <script src="/jquery.ui.touch-punch.min.js" defer></script>
     <script src="os.js" defer></script>
     <script src="index.js" defer></script>
     <title>Handmaid's Tale Project</title>
   </head>
   <body>
-    
     <main id="main">
       <div class="dos" tabindex="0">
         <p class="dos-prompt">Press any key to continue...</p>
@@ -35,7 +39,14 @@
 
       <div class="window">
         <div class="desktop" use-context-menu>
-          <div class="file no-select" app="File Manager" file-name="My Computer" file-type="shortcut" tabindex="0" readonly>
+          <div
+            class="file no-select"
+            app="File Manager"
+            file-name="My Computer"
+            file-type="shortcut"
+            tabindex="0"
+            readonly
+          >
             <img
               class="ico no-select"
               src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/computer-0.png?v=1653967598572"
@@ -43,38 +54,73 @@
             <span>My Computer</span>
           </div>
 
-          <div class="file" app="File Manager" file-name="Recyle Bin" file-type="shortcut" tabindex="0" readonly>
+          <div
+            class="file"
+            app="File Manager"
+            file-name="Recyle Bin"
+            file-type="shortcut"
+            tabindex="0"
+            readonly
+          >
             <img
               class="ico"
               src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/bin-0.png?v=1653969249131"
             />
             <span>Recycle Bin</span>
           </div>
-          
-          <div class="file" app="Notepad" file-name="Artifact_1" file-type="txt" tabindex="0" readonly>
+
+          <div
+            class="file"
+            app="Notepad"
+            file-name="Artifact_1"
+            file-type="txt"
+            tabindex="0"
+            readonly
+          >
             <img
               class="ico"
               src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/ico-notepad.png?v=1654056631591"
             />
             <span>Artifact_1</span>
           </div>
-          
-          <div class="file" app="Notepad" file-name="Artifact_2" file-type="txt" tabindex="0" readonly>
+
+          <div
+            class="file"
+            app="Notepad"
+            file-name="Artifact_2"
+            file-type="txt"
+            tabindex="0"
+            readonly
+          >
             <img
               class="ico"
               src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/ico-notepad.png?v=1654056631591"
             />
             <span>Artifact_2</span>
           </div>
-          
-          <div class="file" app="Notepad" file-name="Artifact_3" file-type="txt" tabindex="0" readonly>
+
+          <div
+            class="file"
+            app="Notepad"
+            file-name="Artifact_3"
+            file-type="txt"
+            tabindex="0"
+            readonly
+          >
             <img
               class="ico"
               src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/ico-notepad.png?v=1654056631591"
             />
             <span>Artifact_3</span>
           </div>
-          <div class="file folder" app="File Manager" file-name="Folder" file-type="folder" tabindex="0" readonly>
+          <div
+            class="file folder"
+            app="File Manager"
+            file-name="Folder"
+            file-type="folder"
+            tabindex="0"
+            readonly
+          >
             <img
               class="ico"
               src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/folder.png?v=1654174991505"
@@ -82,7 +128,7 @@
             <span>Folder</span>
           </div>
         </div>
-        
+
         <ul class="context-menu">
           <li class="list-item">Arrange Icons</li>
           <li class="list-item">Line Up Icons</li>
@@ -104,25 +150,19 @@
             Start
           </button>
           <div class="spacer"></div>
-          <div class="programs">
-            
-          </div>
+          <div class="programs"></div>
           <div class="spacer"></div>
           <div class="tools">
             <button class="btn btn-inset btn-no-focus" id="time"></button>
           </div>
         </div>
-        
+
         <div class="selection"></div>
       </div>
     </main>
-    
-    <button class="remember-btn">
-      remember me
-    </button>
-    
-    <button class="forget-btn">
-      forget me
-    </button>
+
+    <button class="remember-btn">remember me</button>
+
+    <button class="forget-btn">forget me</button>
   </body>
 </html>
