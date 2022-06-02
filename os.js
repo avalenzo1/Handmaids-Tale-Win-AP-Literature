@@ -33,6 +33,18 @@ class Window {
   setApplication(appName) {
     this.application = appName;
   }
+  
+  closeWindow() {
+    
+  }
+  
+  minimizeWindow() {
+    
+  }
+  
+  maximizeWindow() {
+    
+  }
 }
 
 function main() {
@@ -52,7 +64,7 @@ function main() {
 
   $(".file").click(function (e) {
     console.log($(this));
-    new Window().app($(this).attr("app") + '-' + $(this).attr("file-name"));
+    new Window(`${$(this).attr("file-name")} - ${$(this).attr("app")}`);
   });
 
   $(function () {

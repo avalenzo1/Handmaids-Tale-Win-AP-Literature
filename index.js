@@ -44,6 +44,7 @@ function init() {
     
     let startup = new Audio("https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/startup.mp3?v=1653963878874");
     
+    
     startup.addEventListener("canplaythrough", function() {
       startup.play();
       
@@ -51,10 +52,6 @@ function init() {
         main();
         $(".window").removeClass("cursor-progress");
       }, 4000);
-    });
-    
-    startup.addEventListener("error", function() {
-      console.log("Error");
     });
   }
 }
