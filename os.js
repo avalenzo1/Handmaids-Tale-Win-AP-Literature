@@ -22,47 +22,59 @@ class Window {
         <div class="client-area">client area</div>
       </div>
     `);
-    
+
     this.window = $(this.window).appendTo(".window").draggable({
       containment: "parent",
+      handle: ".title-bar",
       snap: ".window",
       snapMode: "inner",
       snapTolerance: 3,
     });
-    
-    $(this.window).find(".btn-minimize").click(function() {
-      this.minimizeWindow();
-    });
-    
-    $(this.window).find(".btn-maximize").click(function() {
-      this.closeWindow();
-    });
-    
-    $(this.window).find(".btn-close").click(function() {
-      this.maximizeWindow();
-    });
 
+    $(this.window)
+      .find(".btn-minimize")
+      .click(function () {
+        $(this).hide();
+      });
+
+    $(this.window)
+      .find(".btn-maximize")
+      .click(function () {
+        if (this.windowIsMaximized) {
+          $(this).removeAttr("style");
+        } else {
+          $(this).css({ top: 0, left: 0, right: 0, bottom: 0 });
+        }
+
+        this.windowIsMaximized = !this.windowIsMaximized;
+      });
+
+    $(this.window)
+      .find(".btn-close")
+      .click(function () {
+        $(this.window).remove();
+      });
   }
 
   setApplication(appName) {
     this.application = appName;
   }
-  
+
   closeWindow() {
     $(this.window).remove();
   }
-  
+
   minimizeWindow() {
     $(this).hide();
   }
-  
+
   maximizeWindow() {
     if (this.windowIsMaximized) {
       $(this).removeAttr("style");
     } else {
-      $(this).css({top: 0, left: 0, right: 0, bottom: 0});
+      $(this).css({ top: 0, left: 0, right: 0, bottom: 0 });
     }
-    
+
     this.windowIsMaximized = !this.windowIsMaximized;
   }
 }
@@ -83,7 +95,7 @@ function main() {
   });
 
   $(".file").click(function (e) {
-    $(".file")
+    $(".file");
     new Window(`${$(this).attr("file-name")} - ${$(this).attr("app")}`);
   });
 
