@@ -159,7 +159,7 @@ function main() {
       }
     }
 
-    $(".desktop::before").mousedown(function (e) {
+    $(".window").mousedown(function (e) {
       e.stopImmediatePropagation();
 
       $(".selection").show();
@@ -176,7 +176,7 @@ function main() {
       $(this).on("mousemove", selectionBox);
     });
 
-    $(".desktop").mouseup(function (e) {
+    $(".window").mouseup(function (e) {
       $(this).off("mousemove", selectionBox);
 
       $(".selection").removeAttr("style");
