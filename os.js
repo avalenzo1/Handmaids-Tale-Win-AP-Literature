@@ -3,24 +3,37 @@ class Window {
     // https://docs.microsoft.com/en-us/windows/win32/winmsg/about-windows
     this.application;
     this.title = title;
+    this.windowIsMaximized = false;
 
     this.window = $(`
       <div class="window-prompt">
-      <div class="title-bar">${this.title}
-        <div class="window-options">
-          <button class="btn">_</button>
-          <button class="btn">O</button>
-          <button class="btn">X</button>
+        <div class="title-bar">${this.title}
+          <div class="window-options">
+            <button class="btn btn-minimize">_</button>
+            <button class="btn btn-maximize">O</button>
+            <button class="btn btn-close">X</button>
+          </div>
         </div>
+        <div class="menu-bar">
+          <button class="btn">
+            Hello
+          </button>
+        </div>
+        <div class="client-area">client area</div>
       </div>
-      <div class="menu-bar">
-        <button class="btn">
-          Hello
-        </button>
-      </div>
-      <div class="client-area">client area</div>
-    </div>
     `);
+    
+    $(this.window).find(".btn-minimize").click(function() {
+      this.minimizeWindow();
+    });
+    
+    $(this.window).find(".btn-maximize").click(function() {
+      this.closeWindow();
+    });
+    
+    $(this.window).find(".btn-close").click(function() {
+      this.maximizeWindow();
+    });
 
     $(this.window).appendTo(".window").draggable({
       containment: "parent",
@@ -35,15 +48,21 @@ class Window {
   }
   
   closeWindow() {
-    
+    $(this.window).remove();
   }
   
   minimizeWindow() {
-    
+    $(this).hide();
   }
   
   maximizeWindow() {
+    if (this.windowIsMaximized) {
+      
+    } else {
+      $(this).css({top: 0, left: 0, right: 0, bottom: 0});
+    }
     
+    this.windowIsMaximized = !this.windowIsMaximized;
   }
 }
 
@@ -63,7 +82,7 @@ function main() {
   });
 
   $(".file").click(function (e) {
-    console.log($(this));
+    $(".file")
     new Window(`${$(this).attr("file-name")} - ${$(this).attr("app")}`);
   });
 
