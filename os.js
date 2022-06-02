@@ -33,20 +33,22 @@ class Window {
       snapTolerance: 3,
     }); // resizable();
     
-    let fn = this;
+    let window = this;
 
     $(`#${this.uniqueID} .btn-minimize`).click(function() {
-      fn.minimizeWindow();
+      window.minimizeWindow();
     });
 
     $(`#${this.uniqueID} .btn-maximize`).click(function() {
-      fn.maximizeWindow();
+      window.maximizeWindow();
     });
 
     $(`#${this.uniqueID} .btn-close`).click(function() {
-      fn.closeWindow();
-      $(``.taskbar .programs`)
-      $(".taskbar .programs").append(`<button class="btn" program-id="${this.uniqueID}">${this.title}</button>`);
+      window.closeWindow();
+    });
+    
+    $(`.taskbar .programs .btn[program-id="${this.uniqueID}"]`).click(function() {
+      $(`#${window.uniqueID}`).toggle();
     });
   }
 
@@ -55,7 +57,7 @@ class Window {
   }
 
   minimizeWindow() {
-    $(".taskbar .programs")
+    $(this.window).toggle();
   }
 
   maximizeWindow() {
@@ -70,6 +72,7 @@ class Window {
   
   closeWindow() {
     $(this.window).remove();
+    $(`.taskbar .programs .btn[program-id="${this.uniqueID}"]`).remove();
   }
 }
 
@@ -181,3 +184,12 @@ function main() {
     });
   });
 }
+
+
+function changeTime() {
+  $("#time").text(moment().format('hh:mm a')); 
+}
+
+
+changeTime();
+setInterval(changeTime, 1000 * 60);
