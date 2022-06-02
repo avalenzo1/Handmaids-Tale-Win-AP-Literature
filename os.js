@@ -23,7 +23,7 @@ class Window {
       </div>
     `);
 
-    this.window = $(this.window).appendTo(".window").draggable({
+    $(this.window).appendTo(".window").draggable({
       containment: "parent",
       handle: ".title-bar",
       snap: ".window",
@@ -33,17 +33,17 @@ class Window {
 
     $(this.window)
       .find(".btn-minimize")
-      .click(function () {
-        $(this).hide();
+      .click(function() {
+        $(this).closest('.window-prompt').hide();
       });
 
     $(this.window)
       .find(".btn-maximize")
       .click(function () {
         if (this.windowIsMaximized) {
-          $(this).removeAttr("style");
+          $(this).closest('.window-prompt').removeAttr("style");
         } else {
-          $(this).css({ top: 0, left: 0, right: 0, bottom: 0 });
+          $(this).closest('.window-prompt').css({ top: 0, left: 0, right: 0, bottom: 0 });
         }
 
         this.windowIsMaximized = !this.windowIsMaximized;
@@ -52,7 +52,7 @@ class Window {
     $(this.window)
       .find(".btn-close")
       .click(function () {
-        $(this.window).remove();
+        $(this).closest('.window-prompt').remove();
       });
   }
 
