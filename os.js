@@ -1,8 +1,8 @@
 class Window {
-  constructor(title) {
+  constructor() {
     // https://docs.microsoft.com/en-us/windows/win32/winmsg/about-windows
     this.application;
-    this.title = title;
+    this.title = $("");
 
     this.window = $(`
       <div class="window-prompt">

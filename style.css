@@ -193,7 +193,7 @@ button {
   background-color: var(--primary-color);
 }
 
-.btn:focus {
+.btn:active {
   border: inset 1px;
   outline-offset: -4px;
   outline: dotted 1px;
