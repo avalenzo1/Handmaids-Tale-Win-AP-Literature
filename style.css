@@ -265,14 +265,22 @@ button {
   z-index: 75;
   top: 10px;
   left: 10px;
-  
-  resize: horizontal;
-  overflow: auto;
 }
 
-.window-prompt:active {
-  z-index: 76;
+.window-prompt.full-view {
+  left: 0 !important; top: 0 !important; bottom: 31px !important; right: 0 !important;
 }
+
+.window-prompt.full-view > .client-area {
+  resize: none !important;
+  overflow: auto !important;
+  width: -webkit-fill-available !important;
+  height: -webkit-fill-available !important;
+}
+
+/* .window-prompt:active {
+  z-index: 76;
+} */
 
 .window-prompt:focus {
   z-index: 76;
@@ -284,6 +292,10 @@ button {
   background-color: #000000;
   color: #ffffff;
   padding: 2px;
+}
+
+.window-prompt > .title-bar > .title-text {
+  padding-right: 5px;
 }
 
 .window-prompt:focus > .title-bar {
@@ -303,6 +315,6 @@ button {
   background-color: #ffffff;
   color: #000000;
   padding: 10px;
-  resize: vertical;
+  resize: both;
   overflow: auto;
 }

@@ -9,7 +9,10 @@ class Window {
 
     this.window = $(`
       <div id="${this.uniqueID}" class="window-prompt" tabindex="0">
-        <div class="title-bar">${this.title}
+        <div class="title-bar">
+          <div class="title-text">
+            ${this.title}
+          </div>
           <div class="window-options">
             <button class="btn btn-minimize">_</button>
             <button class="btn btn-maximize">O</button>
@@ -64,7 +67,7 @@ class Window {
         $(`#${uniqueID} .client-area`).html(res);
       },
       error: function(err) {
-        $(`#${uniqueID} .client-area`).html('error');
+        $(`#${uniqueID} .client-area`).html();
       }
     });
   }
@@ -75,9 +78,9 @@ class Window {
 
   maximizeWindow() {
     if (this.windowIsMaximized) {
-      $(this.window).removeAttr("style");
+      $(this.window).removeClass("full-view");
     } else {
-      $(this.window).css({left: 0, top: 0, bottom: 31 + 'px', right: 0});
+      $(this.window).addClass("full-view");
     }
 
     this.windowIsMaximized = !this.windowIsMaximized;
