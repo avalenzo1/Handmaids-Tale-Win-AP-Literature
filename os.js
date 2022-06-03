@@ -77,7 +77,7 @@ class Window {
     if (this.windowIsMaximized) {
       $(this.window).removeAttr("style");
     } else {
-      $(this.window).css({left: 0, top: 0, width: '-webkit-fill-available', height: '-webkit-fill-available'});
+      $(this.window).css({left: 0, top: 0, bottom: 31 + 'px', right: 0});
     }
 
     this.windowIsMaximized = !this.windowIsMaximized;
@@ -98,7 +98,7 @@ function main() {
     snap: ".window",
     snapMode: "inner",
     snapTolerance: 3,
-  }).resizable();
+  })
 
   $(".file").mousedown(function () {
     $(this).focus();
