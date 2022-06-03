@@ -53,16 +53,15 @@ class Window {
   }
 
   initApp(packageURL) {
-    console.log("init")
-    
     this.packageURL = packageURL;
+    let uniqueID = this.uniqueID;
+    
     $.ajax({
       type: "GET",
       url: this.packageURL,
       dataType: "html",
       success: function(res) {
-        alert(res)
-        $(`#${this.uniqueID} .client-area`).html(res);
+        $(`#${uniqueID} .client-area`).html(res);
       },
       error: function(err) {
 
@@ -99,7 +98,7 @@ function main() {
     snap: ".window",
     snapMode: "inner",
     snapTolerance: 3,
-  });
+  }).resizable();
 
   $(".file").mousedown(function () {
     $(this).focus();
