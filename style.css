@@ -302,7 +302,7 @@ button {
 .window-prompt > .client-area {
   background-color: #ffffff;
   color: #000000;
-  padding: 2px;
+  padding: 10px;
   resize: vertical;
   overflow: auto;
 }

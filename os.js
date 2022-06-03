@@ -64,7 +64,7 @@ class Window {
         $(`#${uniqueID} .client-area`).html(res);
       },
       error: function(err) {
-
+        $(`#${uniqueID} .client-area`).html('error');
       }
     });
   }
