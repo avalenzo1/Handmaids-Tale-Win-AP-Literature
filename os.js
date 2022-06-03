@@ -53,7 +53,21 @@ class Window {
   }
 
   initApp(packageURL) {
+    console.log("init")
+    
     this.packageURL = packageURL;
+    $.ajax({
+      type: "GET",
+      url: this.packageURL,
+      dataType: "html",
+      success: function(res) {
+        alert(res)
+        $(`#${this.uniqueID} .client-area`).html(res);
+      },
+      error: function(err) {
+
+      }
+    });
   }
 
   minimizeWindow() {
@@ -94,7 +108,7 @@ function main() {
   $(".file").click(function (e) {
     $(".file");
     new Window(`${$(this).attr("file-name")} - ${$(this).attr("app")}`)
-      .initApp("");
+      .initApp($(this).attr("file-url"));
   });
 
   $(function () {
