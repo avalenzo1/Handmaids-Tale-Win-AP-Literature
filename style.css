@@ -315,6 +315,7 @@ button {
   background-color: #ffffff;
   color: #000000;
   padding: 10px;
+  min-width: fit-content;
   resize: both;
   overflow: auto;
 }

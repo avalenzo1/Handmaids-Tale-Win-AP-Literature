@@ -1,3 +1,7 @@
+function kernelPanic() {
+  alert("error!")
+}
+
 class Window {
   constructor(title) {
     // https://docs.microsoft.com/en-us/windows/win32/winmsg/about-windows
@@ -66,9 +70,7 @@ class Window {
       success: function(res) {
         $(`#${uniqueID} .client-area`).html(res);
       },
-      error: function(err) {
-        $(`#${uniqueID} .client-area`).html();
-      }
+
     });
   }
 
