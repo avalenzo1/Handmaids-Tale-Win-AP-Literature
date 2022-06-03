@@ -93,7 +93,8 @@ function main() {
 
   $(".file").click(function (e) {
     $(".file");
-    new Window(`${$(this).attr("file-name")} - ${$(this).attr("app")}`);
+    new Window(`${$(this).attr("file-name")} - ${$(this).attr("app")}`)
+      .initApp("");
   });
 
   $(function () {
@@ -123,6 +124,7 @@ function main() {
 
   $(function () {
     // https://stackoverflow.com/a/30985975/16557976 THANK YOU!!!!!!!!!!!!
+    // code below is modified from someone else.
 
     let startX = 0;
     let startY = 0;
@@ -159,9 +161,7 @@ function main() {
       }
     }
 
-    $(".window").mousedown(function (e) {
-      e.stopImmediatePropagation();
-
+    $(".bg").mousedown(function (e) {
       $(".selection").show();
 
       this.clientX = e.clientX - $("#main").getBoundingClientRect().left;
@@ -176,7 +176,7 @@ function main() {
       $(this).on("mousemove", selectionBox);
     });
 
-    $(".window").mouseup(function (e) {
+    $(".bg").mouseup(function (e) {
       $(this).off("mousemove", selectionBox);
 
       $(".selection").removeAttr("style");

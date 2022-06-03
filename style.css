@@ -19,16 +19,6 @@
   src: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/DOSVGA.ttf?v=1654038401691);
 }
 
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-}
-
 /* TODO: CHANGE WINDOW TO GRID LAYOUT */
 
 .dos,
@@ -114,6 +104,7 @@ button {
   position: relative;
   width: inherit;
   height: inherit;
+  user-select: none;
 }
 
 .window > .desktop > .bg {
@@ -164,7 +155,6 @@ button {
   display: block;
   margin: 0 auto;
   margin-bottom: 4px;
-  user-select: none;
 }
 
 .window > .desktop > .file:focus > .ico {
