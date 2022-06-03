@@ -21,7 +21,7 @@ class Window {
             Options
           </button>
         </div>
-        <div class="client-area">client area</div>
+        <div class="client-area"></div>
       </div>
     `);
 
@@ -52,8 +52,8 @@ class Window {
     });
   }
 
-  setApplication(appName) {
-    this.application = appName;
+  initApp(packageURL) {
+    this.packageURL = packageURL;
   }
 
   minimizeWindow() {
@@ -110,7 +110,7 @@ function main() {
         });
     });
 
-    $("*[use-context-menu]").bind("mousedown", function (e) {
+    $("*[use-context-menu]").mousedown(function (e) {
       if (!$(e.target).parents(".context-menu").length > 0) {
         $(".context-menu").hide();
       }

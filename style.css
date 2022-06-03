@@ -116,8 +116,7 @@ button {
   height: inherit;
 }
 
-.window > .desktop::before {
-  content: "";
+.window > .desktop > .bg {
   position: absolute;
   background-color: var(--bg-color);
   left: 0; top: 0; right: 0; bottom: 0;
