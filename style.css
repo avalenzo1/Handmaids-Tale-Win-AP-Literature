@@ -266,7 +266,7 @@ button {
   top: 10px;
   left: 10px;
   
-  resize: both;
+  resize: horizontal;
   overflow: auto;
 }
 
@@ -303,4 +303,6 @@ button {
   background-color: #ffffff;
   color: #000000;
   padding: 2px;
+  resize: vertical;
+  overflow: auto;
 }
