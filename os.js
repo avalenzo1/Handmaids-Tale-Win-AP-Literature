@@ -237,8 +237,21 @@ function main() {
     });
   });
   
-  toggleFullScreen()
-  //  $(".window").requestFullscreen();
+  $(function () {
+    let isFullScreen = false;
+    
+    $(".btn-fs-toggle").click(function() {
+      let window = document.querySelector(".window");
+
+      if (isFullScreen) {
+        window.exitFullscreen();
+      } else {
+        window.requestFullscreen();
+      }
+
+      isFullScreen = !isFullScreen;
+    });
+  });
 }
 
 
