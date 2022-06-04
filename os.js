@@ -97,6 +97,7 @@ class Window {
 }
 
 $(".window-prompt").click(function() {
+  console.log("Sdf")
   $(".window-prompt").removeClass("active");
   $(this).addClass("active");
 });

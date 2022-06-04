@@ -128,6 +128,8 @@ button {
   z-index: 100;
 }
 
+.window > .taskbar > 
+
 .window > .desktop > .file {
   display: inline-block;
   position: relative;
@@ -317,5 +319,5 @@ button {
   min-width: fit-content;
   resize: both;
   overflow: auto;
-  user-select: all;
+  user-select: auto;
 }
