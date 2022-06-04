@@ -18,9 +18,9 @@ class Window {
             ${this.title}
           </div>
           <div class="window-options">
-            <button class="btn btn-minimize"><img width="12" src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/min.png?v=1654311841858"></button>
-            <button class="btn btn-maximize"><img width="12" src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/max-0.png?v=1654311627118"></button>
-            <button class="btn btn-close"><img width="12" src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/close.png?v=1654311100560"></button>
+            <button class="btn btn-minimize"><img height="12" src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/min.png?v=1654311841858"></button>
+            <button class="btn btn-maximize"><img height="12" src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/max-0.png?v=1654311627118"></button>
+            <button class="btn btn-close"><img height="12" src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/close.png?v=1654311100560"></button>
           </div>
         </div>
         <div class="menu-bar">
@@ -68,7 +68,7 @@ class Window {
 
   initApp(packageURL) {
     $(this.window).hide();
-    $()
+    $(".window").addClass("cursor-progress");
     
     this.packageURL = packageURL;
     let uniqueID = this.uniqueID;
@@ -80,6 +80,7 @@ class Window {
       dataType: "html",
       success: function(res) {
         $(`#${uniqueID} .client-area`).html(res);
+        $(".window").removeClass("cursor-progress");
         $(window).show();
       },
       error: function() {
@@ -115,9 +116,21 @@ class Window {
   }
 }
 
+class WindowAlert {
+  constructor(title, message) {
+    this.windowPrompt = new Window(title);
+    $(this.windowPrompt.window).find(".client-area").html(message);
+    $(this.windowPrompt.window).find(".menu-bar").hide();
+    $(this.windowPrompt.window).find(".btn-minimize").hide();
+    $(this.windowPrompt.window).find(".btn-maximize").hide();
+  }
+}
+
 function main() {
   $(".window .taskbar").show();
   $(".window .file").show();
+  
+  new WindowAlert("This", "sdgsd")
 
   $(".file").draggable({
     containment: "parent",
