@@ -84,34 +84,34 @@
   width: 100%;
 }
 
-.desktop ::selection {
+.window ::selection {
   background-color: var(--active-color);
   color: #ffffff;
 }
 
-.desktop,
-.desktop * {
+.window,
+.window * {
   cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/arrow.png?v=1653964914514),
     auto;
 }
 
-.desktop img {
+.window img {
   image-rendering: pixelated;
 }
 
-.desktop,
-.desktop * {
+.window,
+.window button {
   font-family: w95fa, monospace;
 }
 
-.desktop {
+.window > .desktop {
   position: relative;
   width: inherit;
   height: inherit;
   user-select: none;
 }
 
-.desktop > .bg {
+.window > .desktop > .bg {
   position: absolute;
   background-color: var(--bg-color);
   left: 0; top: 0; right: 0; bottom: 0;
@@ -119,7 +119,7 @@
 
 /* Window Taskbar */
 
-.desktop > .taskbar {
+.window > .taskbar {
   display: flex;
   position: absolute;
   bottom: 0;
@@ -134,18 +134,18 @@
   z-index: 100;
 }
 
-.desktop > .taskbar .spacer {
+.window > .taskbar .spacer {
   height: auto;
   border: inset 2px;
   border-bottom: 0;
   border-top: 0;
 }
 
-.desktop > .taskbar > .btn.start {
+.window > .taskbar > .btn.start {
   font-weight: bold;
 }
 
-.desktop > .taskbar > .programs {
+.window > .taskbar > .programs {
   display: flex;
   gap: 5px;
   overflow-x: auto;
@@ -156,11 +156,11 @@
   text-overflow: ellipsis;
 }
 
-.desktop > .taskbar > .tools {
+.window > .taskbar > .tools {
   margin-left: auto;
 }
 
-.desktop > .file {
+.window > .desktop > .file {
   display: inline-block;
   position: relative;
 
@@ -172,24 +172,24 @@
   font-size: smaller;
 }
 
-..desktop > .file:focus {
+.window > .desktop > .file:focus {
   outline: none;
   z-index: 49;
 }
 
-.desktop > .file:focus span {
+.window > .desktop > .file:focus span {
   background-color: var(--active-color);
   outline-offset: -1px;
   outline: dotted 1px;
 }
 
-.desktop > .file > .ico {
+.window > .desktop > .file > .ico {
   display: block;
   margin: 0 auto;
   margin-bottom: 4px;
 }
 
-.desktop > .file:focus > .ico {
+.window > .desktop > .file:focus > .ico {
   filter: brightness(0.5);
 }
 

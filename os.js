@@ -32,10 +32,10 @@ class Window {
       </div>
     `);
 
-    $(this.window).appendTo(".desktop").draggable({
+    $(this.window).appendTo(".window").draggable({
       containment: "parent",
       handle: ".title-bar",
-      snap: ".desktop",
+      snap: ".window",
       snapMode: "inner",
       snapTolerance: 3,
     }); // resizable();
