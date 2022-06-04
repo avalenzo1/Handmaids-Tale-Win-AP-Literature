@@ -18,9 +18,9 @@ class Window {
             ${this.title}
           </div>
           <div class="window-options">
-            <button class="btn btn-minimize">_</button>
-            <button class="btn btn-maximize">O</button>
-            <button class="btn btn-close"><img src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/close.png?v=1654311100560"></button>
+            <button class="btn btn-minimize"><img width="12" src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/min.png?v=1654311841858"></button>
+            <button class="btn btn-maximize"><img width="12" src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/max-0.png?v=1654311627118"></button>
+            <button class="btn btn-close"><img width="12" src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/close.png?v=1654311100560"></button>
           </div>
         </div>
         <div class="menu-bar">
@@ -83,8 +83,10 @@ class Window {
   maximizeWindow() {
     if (this.windowIsMaximized) {
       $(this.window).removeClass("full-view");
+      $(`#${this.uniqueID} .btn-maximize img`).attr("src", "https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/max-0.png?v=1654312027307")
     } else {
       $(this.window).addClass("full-view");
+      $(`#${this.uniqueID} .btn-maximize img`).attr("src", "https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/max-1.png?v=1654311627118")
     }
 
     this.windowIsMaximized = !this.windowIsMaximized;
