@@ -214,6 +214,12 @@
   outline: none;
 }
 
+.btn-fs-toggle {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
 .selection {
   position: absolute;
   z-index: 50;

@@ -18,9 +18,9 @@ class Window {
             ${this.title}
           </div>
           <div class="window-options">
-            <button class="btn btn-minimize"><img height="12" src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/min.png?v=1654311841858"></button>
-            <button class="btn btn-maximize"><img height="12" src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/max-0.png?v=1654311627118"></button>
-            <button class="btn btn-close"><img height="12" src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/close.png?v=1654311100560"></button>
+            <button class="btn btn-minimize"><img width="12" height="12" src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/min.png?v=1654311841858"></button>
+            <button class="btn btn-maximize"><img width="12" height="12" src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/max-0.png?v=1654311627118"></button>
+            <button class="btn btn-close"><img width="12" height="12" src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/close.png?v=1654311100560"></button>
           </div>
         </div>
         <div class="menu-bar">
@@ -236,6 +236,9 @@ function main() {
       $(".selection").hide();
     });
   });
+  
+  toggleFullScreen()
+  //  $(".window").requestFullscreen();
 }
 
 
