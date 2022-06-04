@@ -19,6 +19,10 @@
   src: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/DOSVGA.ttf?v=1654038401691);
 }
 
+body {
+  margin: 0;
+}
+
 /* TODO: CHANGE WINDOW TO GRID LAYOUT */
 
 .dos,

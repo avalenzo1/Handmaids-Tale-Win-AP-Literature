@@ -244,7 +244,7 @@ function main() {
       let window = document.querySelector(".window");
 
       if (isFullScreen) {
-        window.exitFullscreen();
+        document.exitFullscreen();
       } else {
         window.requestFullscreen();
       }
