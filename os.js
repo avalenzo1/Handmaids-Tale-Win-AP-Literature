@@ -20,7 +20,7 @@ class Window {
           <div class="window-options">
             <button class="btn btn-minimize">_</button>
             <button class="btn btn-maximize">O</button>
-            <button class="btn btn-close">X</button>
+            <button class="btn btn-close"><img src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/close.png?v=1654311100560"></button>
           </div>
         </div>
         <div class="menu-bar">
