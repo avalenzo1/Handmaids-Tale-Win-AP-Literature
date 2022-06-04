@@ -89,6 +89,10 @@ class Window {
     });
   }
   
+  hideFromTaskBar() {
+    
+  }
+  
   focusWindow() {
     $(".window-prompt").removeClass("active");
     $(this.window).addClass("active");
@@ -116,14 +120,16 @@ class Window {
   }
 }
 
-class WindowAlert {
+class WindowAlert extends Window {
   constructor(title, message) {
-    this.windowPrompt = new Window(title);
-    $(this.windowPrompt.window).find(".client-area")
+    super(title)
+    
+    $(this.window).find(".client-area")
       .html(`<img src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/error.png?v=1654314691272"> ${message}`);
-    $(this.windowPrompt.window).find(".menu-bar").hide();
-    $(this.windowPrompt.window).find(".btn-minimize").hide();
-    $(this.windowPrompt.window).find(".btn-maximize").hide();
+    $(this.window).find(".menu-bar").hide();
+    $(this.window).find(".btn-minimize").hide();
+    $(this.window).find(".btn-maximize").hide();
+    
     
     new Audio("https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/error.mp3?v=1654374206053").play();
   }
@@ -133,13 +139,8 @@ function main() {
   $(".window .taskbar").show();
   $(".window .file").show();
   
-  let error = new WindowAlert("Error", "Under His Eye");
+  new WindowAlert("Error", "Under His Eye");
   
-  $(`#${error.window.uniqueID} .btn-close`).click(function() {
-    alert("Sdg");
-    error = new WindowAlert("Error", "Under His Eye");
-  })
-
   $(".file").draggable({
     containment: "parent",
     snap: ".window",
