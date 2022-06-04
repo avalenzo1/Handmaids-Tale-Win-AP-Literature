@@ -84,7 +84,7 @@ class Window {
         $(window).show();
       },
       error: function() {
-        alert("error")
+        new WindowAlert("Error", "An Error Occured.");
       }
     });
   }
@@ -136,7 +136,17 @@ class WindowAlert extends Window {
     this.disableResize();
     
     $(this.window).find(".client-area")
-      .html(`<img src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/error.png?v=1654314691272"> ${message}`);
+      .css("background-color", "transparent")
+      .html(`
+        <div style="
+          display: flex;
+          align-items: center;
+          gap: 15px;
+        ">
+          <img src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/error.png?v=1654314691272">
+          ${message}
+        </div>
+      `);
     $(this.window).find(".menu-bar").hide();
     $(this.window).find(".btn-minimize").hide();
     $(this.window).find(".btn-maximize").hide();
@@ -149,7 +159,9 @@ function main() {
   $(".window .taskbar").show();
   $(".window .file").show();
   
-  new WindowAlert("Error", "Under His Eye");
+  // setInterval(function() {
+  //   new WindowAlert("Error", "Under His Eye");
+  // },440);
   
   $(".file").draggable({
     containment: "parent",
