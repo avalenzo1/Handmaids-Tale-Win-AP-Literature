@@ -84,34 +84,34 @@
   width: 100%;
 }
 
-.window ::selection {
+.desktop ::selection {
   background-color: var(--active-color);
   color: #ffffff;
 }
 
-.window,
-.window * {
+.desktop,
+.desktop * {
   cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/arrow.png?v=1653964914514),
     auto;
 }
 
-.window img {
+.desktop img {
   image-rendering: pixelated;
 }
 
-.window,
-button {
+.desktop,
+.desktop * {
   font-family: w95fa, monospace;
 }
 
-.window > .desktop {
+.desktop {
   position: relative;
   width: inherit;
   height: inherit;
   user-select: none;
 }
 
-.window > .desktop > .bg {
+.desktop > .bg {
   position: absolute;
   background-color: var(--bg-color);
   left: 0; top: 0; right: 0; bottom: 0;
@@ -119,7 +119,7 @@ button {
 
 /* Window Taskbar */
 
-.window > .taskbar {
+.desktop > .taskbar {
   display: flex;
   position: absolute;
   bottom: 0;
@@ -134,18 +134,18 @@ button {
   z-index: 100;
 }
 
-.window > .taskbar .spacer {
+.desktop > .taskbar .spacer {
   height: auto;
   border: inset 2px;
   border-bottom: 0;
   border-top: 0;
 }
 
-.window > .taskbar > .btn.start {
+.desktop > .taskbar > .btn.start {
   font-weight: bold;
 }
 
-.window > .taskbar > .programs {
+.desktop > .taskbar > .programs {
   display: flex;
   gap: 5px;
   overflow-x: auto;
@@ -156,11 +156,11 @@ button {
   text-overflow: ellipsis;
 }
 
-.window > .taskbar > .tools {
+.desktop > .taskbar > .tools {
   margin-left: auto;
 }
 
-.window > .desktop > .file {
+.desktop > .file {
   display: inline-block;
   position: relative;
 
@@ -172,24 +172,24 @@ button {
   font-size: smaller;
 }
 
-.window > .desktop > .file:focus {
+..desktop > .file:focus {
   outline: none;
   z-index: 49;
 }
 
-.window > .desktop > .file:focus span {
+.desktop > .file:focus span {
   background-color: var(--active-color);
   outline-offset: -1px;
   outline: dotted 1px;
 }
 
-.window > .desktop > .file > .ico {
+.desktop > .file > .ico {
   display: block;
   margin: 0 auto;
   margin-bottom: 4px;
 }
 
-.window > .desktop > .file:focus > .ico {
+.desktop > .file:focus > .ico {
   filter: brightness(0.5);
 }
 

@@ -32,10 +32,10 @@ class Window {
       </div>
     `);
 
-    $(this.window).appendTo(".window").draggable({
+    $(this.window).appendTo(".desktop").draggable({
       containment: "parent",
       handle: ".title-bar",
-      snap: ".window",
+      snap: ".desktop",
       snapMode: "inner",
       snapTolerance: 3,
     }); // resizable();
@@ -119,7 +119,8 @@ class Window {
 class WindowAlert {
   constructor(title, message) {
     this.windowPrompt = new Window(title);
-    $(this.windowPrompt.window).find(".client-area").html(message);
+    $(this.windowPrompt.window).find(".client-area")
+      .html(`<img src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/error.png?v=1654314691272"> ${message}`);
     $(this.windowPrompt.window).find(".menu-bar").hide();
     $(this.windowPrompt.window).find(".btn-minimize").hide();
     $(this.windowPrompt.window).find(".btn-maximize").hide();
@@ -130,7 +131,7 @@ function main() {
   $(".window .taskbar").show();
   $(".window .file").show();
   
-  new WindowAlert("This", "sdgsd")
+  // new WindowAlert("Error", "Under His Eye");
 
   $(".file").draggable({
     containment: "parent",
