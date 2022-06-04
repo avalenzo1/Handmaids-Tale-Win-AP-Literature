@@ -113,6 +113,8 @@ button {
   left: 0; top: 0; right: 0; bottom: 0;
 }
 
+/* Window Taskbar */
+
 .window > .taskbar {
   display: flex;
   position: absolute;
@@ -128,7 +130,31 @@ button {
   z-index: 100;
 }
 
-.window > .taskbar > 
+.window > .taskbar .spacer {
+  height: auto;
+  border: inset 2px;
+  border-bottom: 0;
+  border-top: 0;
+}
+
+.window > .taskbar > .btn.start {
+  font-weight: bold;
+}
+
+.window > .taskbar > .programs {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+}
+
+.window > .taskbar > .programs > .btn {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.window > .taskbar > .tools {
+  margin-left: auto;
+}
 
 .window > .desktop > .file {
   display: inline-block;
@@ -161,23 +187,6 @@ button {
 
 .window > .desktop > .file:focus > .ico {
   filter: brightness(0.5);
-}
-
-/* Window Taskbar */
-
-.window > .taskbar .spacer {
-  height: auto;
-  border: inset 2px;
-  border-bottom: 0;
-  border-top: 0;
-}
-
-.window > .taskbar > .tools {
-  margin-left: auto;
-}
-
-.window > .taskbar > .btn.start {
-  font-weight: bold;
 }
 
 .btn {
