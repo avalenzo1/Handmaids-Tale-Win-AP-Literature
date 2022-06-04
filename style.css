@@ -95,6 +95,10 @@
     auto;
 }
 
+.window img {
+  image-rendering: pixelated;
+}
+
 .window,
 button {
   font-family: w95fa, monospace;
@@ -305,7 +309,7 @@ button {
 }
 
 .window-prompt > .title-bar > .title-text {
-  padding-right: 5px;
+  padding-right: 15px;
 }
 
 .window-prompt.active > .title-bar {

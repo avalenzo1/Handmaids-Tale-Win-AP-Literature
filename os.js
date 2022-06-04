@@ -98,7 +98,7 @@ class Window {
   }
 }
 
-$(".window-prompt").click(function() {
+$("window-prompt").focus(function() {
   console.log("Sdf")
   $(".window-prompt").removeClass("active");
   $(this).addClass("active");
