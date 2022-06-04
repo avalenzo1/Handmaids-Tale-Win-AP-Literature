@@ -72,7 +72,7 @@ class Window {
     
     this.packageURL = packageURL;
     let uniqueID = this.uniqueID;
-    let window = this.window;
+    let window = this;
     
     $.ajax({
       type: "GET",
@@ -81,10 +81,13 @@ class Window {
       success: function(res) {
         $(`#${uniqueID} .client-area`).html(res);
         $(".window").removeClass("cursor-progress");
-        $(window).show();
+        $(window.window).show();
       },
       error: function() {
-        new WindowAlert("Error", "An Error Occured.");
+        new WindowAlert("Error", "File was not found");
+        
+        window.closeWindow();
+        $(".window").removeClass("cursor-progress");
       }
     });
   }
