@@ -171,8 +171,7 @@ button {
 }
 
 .window > .taskbar > .tools {
-  right: 2px;
-  position: absolute;
+  margin-left: auto;
 }
 
 .window > .taskbar > .btn.start {
@@ -298,7 +297,7 @@ button {
   padding-right: 5px;
 }
 
-.window-prompt:focus > .title-bar {
+.window-prompt.active > .title-bar {
   background-color: var(--active-color);
 }
 
@@ -318,4 +317,5 @@ button {
   min-width: fit-content;
   resize: both;
   overflow: auto;
+  user-select: all;
 }

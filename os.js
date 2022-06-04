@@ -70,7 +70,9 @@ class Window {
       success: function(res) {
         $(`#${uniqueID} .client-area`).html(res);
       },
-
+      error: function() {
+        alert("error")
+      }
     });
   }
 
@@ -93,6 +95,11 @@ class Window {
     $(`.taskbar .programs .btn[program-id="${this.uniqueID}"]`).remove();
   }
 }
+
+$(".window-prompt").click(function() {
+  $(".window-prompt").removeClass("active");
+  $(this).addClass("active");
+});
 
 function main() {
   $(".window .taskbar").show();
@@ -191,11 +198,11 @@ function main() {
       $(".selection").css("left", this.clientX + "px");
       $(".selection").css("top", this.clientY + "px");
 
-      $(this).on("mousemove", selectionBox);
+      $(".window").on("mousemove", selectionBox);
     });
 
     $(".bg").mouseup(function (e) {
-      $(this).off("mousemove", selectionBox);
+      $(".window").off("mousemove", selectionBox);
 
       $(".selection").removeAttr("style");
       $(".selection").hide();
