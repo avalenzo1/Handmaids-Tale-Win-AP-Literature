@@ -124,6 +124,8 @@ class WindowAlert {
     $(this.windowPrompt.window).find(".menu-bar").hide();
     $(this.windowPrompt.window).find(".btn-minimize").hide();
     $(this.windowPrompt.window).find(".btn-maximize").hide();
+    
+    new Audio("https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/error.mp3?v=1654374206053").play();
   }
 }
 
@@ -131,7 +133,12 @@ function main() {
   $(".window .taskbar").show();
   $(".window .file").show();
   
-  // new WindowAlert("Error", "Under His Eye");
+  let error = new WindowAlert("Error", "Under His Eye");
+  
+  $(`#${error.window.uniqueID} .btn-close`).click(function() {
+    alert("Sdg");
+    error = new WindowAlert("Error", "Under His Eye");
+  })
 
   $(".file").draggable({
     containment: "parent",
