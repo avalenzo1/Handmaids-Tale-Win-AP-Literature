@@ -41,6 +41,8 @@ class Window {
     }); // resizable();
     
     let window = this;
+    
+    window.focusWindow();
 
     $(`#${this.uniqueID} .btn-minimize`).click(function() {
       window.minimizeWindow();
@@ -56,12 +58,21 @@ class Window {
     
     $(`.taskbar .programs .btn[program-id="${this.uniqueID}"]`).click(function() {
       $(`#${window.uniqueID}`).toggle();
+      window.focusWindow();
+    });
+    
+    $(this.window).click(function() {
+      window.focusWindow();
     });
   }
 
   initApp(packageURL) {
+    $(this.window).hide();
+    $()
+    
     this.packageURL = packageURL;
     let uniqueID = this.uniqueID;
+    let window = this.window;
     
     $.ajax({
       type: "GET",
@@ -69,11 +80,17 @@ class Window {
       dataType: "html",
       success: function(res) {
         $(`#${uniqueID} .client-area`).html(res);
+        $(window).show();
       },
       error: function() {
         alert("error")
       }
     });
+  }
+  
+  focusWindow() {
+    $(".window-prompt").removeClass("active");
+    $(this.window).addClass("active");
   }
 
   minimizeWindow() {
@@ -97,12 +114,6 @@ class Window {
     $(`.taskbar .programs .btn[program-id="${this.uniqueID}"]`).remove();
   }
 }
-
-$("window-prompt").focus(function() {
-  console.log("Sdf")
-  $(".window-prompt").removeClass("active");
-  $(this).addClass("active");
-});
 
 function main() {
   $(".window .taskbar").show();
@@ -149,7 +160,7 @@ function main() {
       $(".context-menu").hide();
     });
   });
-
+  
   $(function () {
     // https://stackoverflow.com/a/30985975/16557976 THANK YOU!!!!!!!!!!!!
     // code below is modified from someone else.
