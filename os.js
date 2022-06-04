@@ -90,7 +90,15 @@ class Window {
   }
   
   hideFromTaskBar() {
-    
+    $(`.taskbar .programs .btn[program-id="${this.uniqueID}"]`).hide();
+  }
+  
+  disableResize() {
+    $(this.window).addClass("no-resize");
+  }
+  
+  enableResize() {
+    $(this.window).removeClass("no-resize");
   }
   
   focusWindow() {
@@ -124,12 +132,14 @@ class WindowAlert extends Window {
   constructor(title, message) {
     super(title)
     
+    this.hideFromTaskBar();
+    this.disableResize();
+    
     $(this.window).find(".client-area")
       .html(`<img src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/error.png?v=1654314691272"> ${message}`);
     $(this.window).find(".menu-bar").hide();
     $(this.window).find(".btn-minimize").hide();
     $(this.window).find(".btn-maximize").hide();
-    
     
     new Audio("https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/error.mp3?v=1654374206053").play();
   }
