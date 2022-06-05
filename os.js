@@ -162,9 +162,9 @@ function main() {
   $(".window .taskbar").show();
   $(".window .file").show();
   
-  // setInterval(function() {
-  //   new WindowAlert("Error", "Under His Eye");
-  // },440);
+//   setInterval(function() {
+//     new WindowAlert("Error", "Under His Eye");
+//   }, 777);
   
   $(".file").draggable({
     containment: "parent",
