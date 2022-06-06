@@ -5,11 +5,12 @@
   --primary-color: silver;
   --active-color: #0000a8;
 
-  --outset-box-border: outset 1px 1px #dfdfdf, outset -1px -1px grey;
-  --inset-box-border: inset 1px 1px #dfdfdf, inset -1px -1px grey;
+  --outset-box-border: inset 1px 1px #dfdfdf, inset -1px -1px grey;
+  --inset-box-border: inset 1px 1px grey, inset -1px -1px #dfdfdf;
   
   --inner-border: 1px solid;
-  --inner-border-color: silver #000000 #000000 silver;
+  --outset-inner-border-color: silver #000000 #000000 silver;
+  --inset-inner-border-color: #000000 silver silver #000000;
 }
 
 @font-face {
@@ -203,15 +204,17 @@ body {
 }
 
 .btn {
-  padding: 2px;
+  padding: 4px;
   background-color: var(--primary-color);
   box-shadow: var(--outset-box-border);
   border: var(--inner-border);
-  border-color: var(--inner-border-color);
+  border-color: var(--outset-inner-border-color);
 }
 
 .btn:active {
-  border: var(--inset-border);
+  background-color: var(--primary-color);
+  box-shadow: var(--inset-box-border);
+  border-color: var(--inset-inner-border-color);
   outline-offset: -4px;
   outline: dotted 1px;
 }
