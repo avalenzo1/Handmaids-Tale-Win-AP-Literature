@@ -322,6 +322,7 @@ body {
 
 .window-prompt > .title-bar > .title-text {
   padding-right: 15px;
+  flex-grow: 1;
 }
 
 .window-prompt.active {
