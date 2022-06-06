@@ -56,7 +56,7 @@ class Window {
       window.closeWindow();
     });
     
-    $(`.taskbar .programs .btn[program-id="${this.uniqueID}"]`).click(function() {
+    $(`.taskbar .programs .btn[program-id="${this.uniqueID}"]:not(.active)`).click(function() {
       $(`#${window.uniqueID}`).toggle();
       window.focusWindow();
     });
