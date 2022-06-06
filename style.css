@@ -300,8 +300,8 @@ body {
 .window-prompt.full-view > .client-area {
   resize: none;
   overflow: auto;
-  width: -webkit-fill-available;
-  height: -webkit-fill-available;
+  width: fill-available;
+  height: fill-available;
 }
 
 .window-prompt.no-resize > .client-area {
