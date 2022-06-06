@@ -2,11 +2,14 @@
   --res-x: 800px;
 
   --bg-color: #008282;
-  --primary-color: #c3c3c3;
+  --primary-color: silver;
   --active-color: #0000a8;
+
+  --outset-box-border: outset 1px 1px #dfdfdf, outset -1px -1px grey;
+  --inset-box-border: inset 1px 1px #dfdfdf, inset -1px -1px grey;
   
-  --inset-border: inset 2px;
-  --outset-border: outset 2px;
+  --inner-border: 1px solid;
+  --inner-border-color: silver #000000 #000000 silver;
 }
 
 @font-face {
