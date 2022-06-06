@@ -204,8 +204,10 @@ body {
 
 .btn {
   padding: 2px;
-  border: var(--outset-border);
   background-color: var(--primary-color);
+  box-shadow: var(--outset-box-border);
+  border: var(--inner-border);
+  border-color: var(--inner-border-color);
 }
 
 .btn:active {
