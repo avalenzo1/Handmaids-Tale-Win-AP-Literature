@@ -4,6 +4,9 @@
   --bg-color: #008282;
   --primary-color: silver;
   --active-color: #0000a8;
+  
+  --inset-border: inset 1px;
+  --outset-border: outset 1px;
 
   --outset-box-border: inset 1px 1px #dfdfdf, inset -1px -1px grey;
   --inset-box-border: inset 1px 1px grey, inset -1px -1px #dfdfdf;
@@ -133,7 +136,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  border: outset 2px;
+  border: var(--outset-border);
   border-left: 0;
   border-right: 0;
   padding: 2px;
@@ -144,7 +147,7 @@ body {
 
 .window > .taskbar .spacer {
   height: auto;
-  border: inset 2px;
+  border: var(--inset-border);
   border-bottom: 0;
   border-top: 0;
 }
@@ -204,7 +207,7 @@ body {
 }
 
 .btn {
-  padding: 4px;
+  padding: 3px;
   background-color: var(--primary-color);
   box-shadow: var(--outset-box-border);
   border: var(--inner-border);
@@ -220,8 +223,17 @@ body {
 }
 
 .btn-inset {
+  border: var(--inner-border);
+  background-color: var(--primary-color);
+  box-shadow: var(--inset-box-border);
+  border-color: var(--inset-inner-border-color);
+}
+
+.btn-inset#time {
+  box-shadow: none;
   border: var(--inset-border);
 }
+
 
 .btn-no-focus:focus {
   outline-offset: none;
@@ -292,9 +304,11 @@ body {
       "."
       "."
       ".";
-  border: 2px outset var(--primary-color);
   position: absolute;
   background-color: var(--primary-color);
+  box-shadow: var(--outset-box-border);
+  border: var(--inner-border);
+  border-color: var(--outset-inner-border-color);
   padding: 2px;
   z-index: 75;
   top: 10px;
