@@ -315,6 +315,7 @@ body {
 .window-prompt.full-view > .client-area {
   resize: none;
   overflow: auto;
+  width: inherit !important;
   flex-grow: 1;
 }
 
