@@ -34,7 +34,7 @@ class Window {
 
     $(this.window).appendTo(".window").draggable({
       containment: "parent",
-      handle: ".title-bar",
+      handle: ".title-text",
       snap: ".window",
       snapMode: "inner",
       snapTolerance: 3,
