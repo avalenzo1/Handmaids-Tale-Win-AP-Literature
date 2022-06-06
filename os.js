@@ -122,6 +122,7 @@ class Window {
       $(`#${this.uniqueID} .btn-maximize img`).attr("src", "https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/max-0.png?v=1654312027307")
     } else {
       $(this.window).addClass("full-view");
+      $(this.window).removeAttr("style");
       $(`#${this.uniqueID} .btn-maximize img`).attr("src", "https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/max-1.png?v=1654311627118")
     }
 

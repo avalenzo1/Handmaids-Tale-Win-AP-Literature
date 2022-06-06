@@ -295,15 +295,8 @@ body {
 }
 
 .window-prompt {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: min-content min-content auto;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-      "."
-      "."
-      ".";
+  display: flex;
+  flex-direction: column;
   position: absolute;
   background-color: var(--primary-color);
   box-shadow: var(--outset-box-border);
@@ -322,8 +315,7 @@ body {
 .window-prompt.full-view > .client-area {
   resize: none;
   overflow: auto;
-  width: fill-available;
-  height: fill-available;
+  flex-grow: 1;
 }
 
 .window-prompt.no-resize > .client-area {
