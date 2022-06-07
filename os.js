@@ -3,10 +3,12 @@ function kernelPanic() {
 }
 
 class Window {
-  constructor(title) {
+  constructor(title, x=10, y=10) {
     // https://docs.microsoft.com/en-us/windows/win32/winmsg/about-windows
     this.application;
     this.title = title;
+    this.x = x;
+    this.y = y;
     this.windowIsMaximized = false;
     this.uniqueID = 'id-' + Math.random().toString(16).slice(2); // https://stackoverflow.com/a/19842865/16557976
     $(".taskbar .programs").append(`<button class="btn" program-id="${this.uniqueID}">${this.title}</button>`);
@@ -31,6 +33,10 @@ class Window {
         <div class="client-area"></div>
       </div>
     `);
+    
+    if (this.x || this.y) {
+      $(this.window).css({left:this.x, top: this.y});
+    }
 
     $(this.window).appendTo(".window").draggable({
       containment: "parent",
@@ -138,8 +144,8 @@ class Window {
 }
 
 class WindowAlert extends Window {
-  constructor(title, message) {
-    super(title)
+  constructor(title, message, x, y) {
+    super(title, x, y)
     
     this.hideFromTaskBar();
     this.disableResize();
@@ -316,13 +322,17 @@ function main() {
   
   (function() {
     let count = 0;
+    let x = 0;
+    let y = 0;
     $("#shut-down").click(function() {
-      new WindowAlert('.',"<img src='https://i.pinimg.com/originals/73/ab/91/73ab91dab9ec661d891bcaf9cbd5df4d.jpg'>")
+
       setInterval(function() {
-        new WindowAlert('','');
+        x += 10;
+        y += 10;
+        let curr_w = new WindowAlert('','',x,y);
         count++;
         
-        if (count === 100) {
+        if (count === 50) {
           location.reload();
         }
       },10);
