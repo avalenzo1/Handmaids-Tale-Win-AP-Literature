@@ -1,5 +1,6 @@
 :root {
-  --res-x: 800px;
+  --res-w: 800px;
+  --res-h: 600px;
 
   --bg-color: #008282;
   --primary-color: silver;
@@ -37,8 +38,8 @@ body {
 .window {
   background-color: #000000;
   position: relative;
-  width: 800px;
-  height: 600px;
+  width: var(--res-w);
+  height: var(--res-h);
   overflow: hidden;
   display: none;
 }
