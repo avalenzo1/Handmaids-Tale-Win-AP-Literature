@@ -317,7 +317,8 @@ function main() {
     setInterval(changeTime, 1000 * 60);
   });
   
-  $(".dropdown .dropdown-toggle").click(function() {
+  $('.window').on('click', '.dropdown .dropdown-toggle', function() {
+    console.log("bruh")
     let dropdown = $(this).closest(".dropdown");
     let dropdown_menu = $(dropdown).find(".dropdown-menu");
     let direction = $(dropdown).attr("direction");
