@@ -308,6 +308,14 @@ body {
   left: 10px;
 }
 
+.window-prompt.ui-draggable-dragging {
+  opacity: 0;
+}
+
+.window-prompt.ui-draggable-dragging:after {
+  content: "sdgd";
+}
+
 .window-prompt.full-view {
   left: 0 !important; top: 0 !important; bottom: 31px !important; right: 0 !important;
 }
@@ -330,6 +338,7 @@ body {
 
 .window-prompt > .title-bar {
   display: flex;
+  align-items: center;
   background-color: #000000;
   color: #ffffff;
   padding: 2px;
@@ -338,7 +347,6 @@ body {
 .window-prompt > .title-bar > .title-text {
   padding-right: 15px;
   flex-grow: 1;
-  align-items: center;
 }
 
 .window-prompt.active {

@@ -111,10 +111,6 @@ class Window {
     $(".taskbar .programs .btn").removeClass("btn-inset active")
     $(`.taskbar .programs .btn[program-id="${this.uniqueID}"]`).addClass("btn-inset active")
   }
-  
-  unfocusWindow() {
-    
-  }
 
   minimizeWindow() {
     $(this.window).toggle();
