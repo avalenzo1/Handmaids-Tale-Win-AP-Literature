@@ -282,8 +282,12 @@ body {
   color: #ffffff;
 }
 
+.dropdown-menu hr {
+  margin: 0;
+}
+
 .dropdown-lg .dropdown-menu .dropdown-item {
-  padding: 5px 15Tpx;
+  padding: 5px 15px;
 }
 
 .context-menu {
