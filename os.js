@@ -45,7 +45,6 @@ class Window {
             </button>
 
             <div class="dropdown-menu">
-              <button class="dropdown-item" onclick="new WindowAlert('Success!', 'Document Successfully Saved!')">Save File</button>
               <button class="dropdown-item btn-close">Close Window</button>
             </div>
           </div>
