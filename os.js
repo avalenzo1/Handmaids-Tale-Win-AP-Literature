@@ -325,12 +325,14 @@ function main() {
     let x = 0;
     let y = 0;
     $("#shut-down").click(function() {
-
       setInterval(function() {
         x += 10;
         y += 10;
-        let curr_w = new WindowAlert('','Shutting down OS...',x,y);
-        count++;
+        
+        if (count <=25)
+          let curr_w = new WindowAlert('','Shutting down OS...',x,y);
+          count++;
+        }
         
         if (count === 25) {
           location.reload();
