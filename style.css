@@ -253,6 +253,10 @@ body {
   filter: invert(1);
 }
 
+.drop {
+  
+}
+
 .context-menu {
   display: none;
   position: absolute;
