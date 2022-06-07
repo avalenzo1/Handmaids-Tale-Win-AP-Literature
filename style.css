@@ -215,6 +215,11 @@ body {
   border-color: var(--outset-inner-border-color);
 }
 
+.btn, .btn * {
+    cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/Cursor_15.cur?v=1654048053107),
+    auto;
+}
+
 .btn:active {
   background-color: var(--primary-color);
   box-shadow: var(--inset-box-border);

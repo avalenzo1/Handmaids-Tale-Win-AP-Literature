@@ -330,10 +330,6 @@ function main() {
     $(dropdown_menu).toggle();
   });
   
-  function linkTo(app,file_name,file_url) {
-    new Window(`${file_name} - ${app}`).initApp(file_url);
-  }
-  
   (function() {
     let count = 0;
     let x = 0;
