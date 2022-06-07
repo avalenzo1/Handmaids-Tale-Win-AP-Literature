@@ -207,7 +207,7 @@ body {
 }
 
 .btn {
-  padding: 3px;
+  padding: 5px;
   background-color: var(--primary-color);
   box-shadow: var(--outset-box-border);
   border: var(--inner-border);

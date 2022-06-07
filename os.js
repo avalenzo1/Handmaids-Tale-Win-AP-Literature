@@ -26,9 +26,15 @@ class Window {
           </div>
         </div>
         <div class="menu-bar">
-          <button class="btn">
-            Options
-          </button>
+          <div class="dropdown" direction="bottom">
+            <button class="btn dropdown-toggle">
+              Options
+            </button>
+
+            <div class="dropdown-menu" style="display: block;">
+              <button class="dropdown-item">Save</button>
+            </div>
+          </div>
         </div>
         <div class="client-area"></div>
       </div>
