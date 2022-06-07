@@ -291,6 +291,10 @@ function main() {
       isFullScreen = !isFullScreen;
     });
   });
+  
+  $(".dropdown .dropdown-toggle").click(function() {
+    console.log("sd")$(this).parent().toggle()console.log($(this).parent().toggle());
+  });
 }
 
 
