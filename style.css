@@ -272,6 +272,7 @@ body {
   border: none;
   width: 100%;
   background-color: transparent;
+  white-space: nowrap;
 }
 
 .dropdown-menu .dropdown-item:hover {

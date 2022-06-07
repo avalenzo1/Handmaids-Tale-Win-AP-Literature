@@ -293,7 +293,15 @@ function main() {
   });
   
   $(".dropdown .dropdown-toggle").click(function() {
-    console.log("sd")$(this).parent().toggle()console.log($(this).parent().toggle());
+    let dropdown = $(this).closest(".dropdown");
+    let direction = $(dropdown).attr("direction");
+    
+    if (direction === 'top') {
+      console.log($(dropdown).height())
+      $(dropdown).css("transform", `translate3d(0px, ${-$(dropdown).height()}px, 0px)`)
+    }
+    
+    $(dropdown).find(".dropdown-menu").toggle();
   });
 }
 
