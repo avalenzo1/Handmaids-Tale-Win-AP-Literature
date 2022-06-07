@@ -268,7 +268,9 @@ body {
 }
 
 .dropdown-menu .dropdown-item {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   border: none;
   width: 100%;
   background-color: transparent;
@@ -278,6 +280,10 @@ body {
 .dropdown-menu .dropdown-item:hover {
   background-color: var(--active-color);
   color: #ffffff;
+}
+
+.dropdown-lg .dropdown-menu .dropdown-item {
+  padding: 5px 15px;
 }
 
 .context-menu {

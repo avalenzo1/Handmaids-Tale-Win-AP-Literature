@@ -294,14 +294,14 @@ function main() {
   
   $(".dropdown .dropdown-toggle").click(function() {
     let dropdown = $(this).closest(".dropdown");
+    let dropdown_menu = $(dropdown).find(".dropdown-menu");
     let direction = $(dropdown).attr("direction");
     
     if (direction === 'top') {
-      console.log($(dropdown).height())
-      $(dropdown).css("transform", `translate3d(0px, ${-$(dropdown).height()}px, 0px)`)
+      $(dropdown_menu).css("transform", `translate3d(0px, ${-$(dropdown_menu).outerHeight()}px, 0px)`)
     }
     
-    $(dropdown).find(".dropdown-menu").toggle();
+    $(dropdown_menu).toggle();
   });
 }
 
