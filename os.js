@@ -329,10 +329,10 @@ function main() {
       setInterval(function() {
         x += 10;
         y += 10;
-        let curr_w = new WindowAlert('','',x,y);
+        let curr_w = new WindowAlert('','Shutting down OS...',x,y);
         count++;
         
-        if (count === 50) {
+        if (count === 25) {
           location.reload();
         }
       },10);
