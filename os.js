@@ -31,8 +31,9 @@ class Window {
               Options
             </button>
 
-            <div class="dropdown-menu" style="display: block;">
-              <button class="dropdown-item">Save</button>
+            <div class="dropdown-menu">
+              <button class="dropdown-item">Save File</button>
+              <button class="dropdown-item">Close Window</button>
             </div>
           </div>
         </div>
@@ -71,6 +72,8 @@ class Window {
     $(`.taskbar .programs .btn[program-id="${this.uniqueID}"]`).click(function() {
       if (window.window.hasClass("active")) {
         $(`#${window.uniqueID}`).toggle();
+      } else {
+        $(`#${window.uniqueID}`).show();
       }
       
       window.focusWindow();
@@ -321,6 +324,8 @@ function main() {
     
     if (direction === 'top') {
       $(dropdown_menu).css("transform", `translate3d(0px, ${-$(dropdown_menu).outerHeight()}px, 0px)`)
+    } else if (direction === 'bottom') {
+      $(dropdown_menu).css("transform", `translate3d(0px, ${$(dropdown_menu).outerHeight()}px, 0px)`)
     }
     
     $(dropdown_menu).toggle();
