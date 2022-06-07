@@ -25,6 +25,7 @@ class Window {
             <button class="btn btn-close"><img width="12" height="12" src="https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/close.png?v=1654311100560"></button>
           </div>
         </div>
+        
         <div class="menu-bar">
           <div class="dropdown" direction="bottom">
             <button class="btn dropdown-toggle">
