@@ -313,4 +313,19 @@ function main() {
     
     $(dropdown_menu).toggle();
   });
+  
+  (function() {
+    let count = 0;
+    $("#shut-down").click(function() {
+      new WindowAlert('.',"<img src='https://i.pinimg.com/originals/73/ab/91/73ab91dab9ec661d891bcaf9cbd5df4d.jpg'>")
+      setInterval(function() {
+        new WindowAlert('','');
+        count++;
+        
+        if (count === 100) {
+          location.reload();
+        }
+      },10);
+    });
+})();
 }
