@@ -292,6 +292,16 @@ function main() {
     });
   });
   
+  $(function() {
+    function changeTime() {
+      $("#time").text(moment().format('hh:mm a')); 
+    }
+
+
+    changeTime();
+    setInterval(changeTime, 1000 * 60);
+  });
+  
   $(".dropdown .dropdown-toggle").click(function() {
     let dropdown = $(this).closest(".dropdown");
     let dropdown_menu = $(dropdown).find(".dropdown-menu");
@@ -304,12 +314,3 @@ function main() {
     $(dropdown_menu).toggle();
   });
 }
-
-
-function changeTime() {
-  $("#time").text(moment().format('hh:mm a')); 
-}
-
-
-changeTime();
-setInterval(changeTime, 1000 * 60);
