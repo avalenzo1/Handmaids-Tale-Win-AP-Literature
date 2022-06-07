@@ -57,7 +57,10 @@ class Window {
     });
     
     $(`.taskbar .programs .btn[program-id="${this.uniqueID}"]`).click(function() {
-      $(`#${window.uniqueID}`).toggle();
+      if (window.window.hasClass("active")) {
+        $(`#${window.uniqueID}`).toggle();
+      }
+      
       window.focusWindow();
     });
     
