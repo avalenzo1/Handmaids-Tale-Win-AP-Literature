@@ -180,7 +180,7 @@ body {
   background-color: transparent;
   color: #ffffff;
   padding: 4px;
-  border: 0;
+  border: none;
   text-align: center;
   font-size: smaller;
 }
@@ -253,8 +253,29 @@ body {
   filter: invert(1);
 }
 
-.drop {
-  
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 0; left: 0;
+  background-color: var(--primary-color);
+  box-shadow: var(--outset-box-border);
+  border: var(--inner-border);
+  border-color: var(--outset-inner-border-color);
+}
+
+.dropdown-menu .dropdown-item {
+  display: block;
+  border: none;
+  width: 100%;
+  background-color: transparent;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: var(--active-color);
+  color: #ffffff;
 }
 
 .context-menu {
