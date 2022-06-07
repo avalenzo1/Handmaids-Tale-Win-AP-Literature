@@ -137,11 +137,13 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  border: var(--outset-border);
-  border-left: 0;
-  border-right: 0;
   padding: 2px;
   background-color: var(--primary-color);
+  box-shadow: var(--outset-box-border);
+  border: var(--inner-border);
+  border-left: none;
+  border-right: none;
+  border-color: var(--outset-inner-border-color);
   gap: 4px;
   z-index: 100;
 }
@@ -276,6 +278,7 @@ body {
 .dropdown-menu .dropdown-item {
   display: flex;
   align-items: center;
+  padding: 4px;
   gap: 10px;
   border: none;
   width: 100%;
@@ -303,8 +306,10 @@ body {
   margin: 0;
   list-style-type: none;
   padding: 1px;
-  border: var(--outset-border);
   background-color: var(--primary-color);
+  box-shadow: var(--outset-box-border);
+  border: var(--inner-border);
+  border-color: var(--outset-inner-border-color);
 }
 
 .context-menu .list-item {
@@ -352,7 +357,7 @@ body {
 }
 
 .window-prompt.full-view {
-  left: 0 !important; top: 0 !important; bottom: 31px !important; right: 0 !important;
+  left: 0 !important; top: 0 !important; bottom: 33px !important; right: 0 !important;
 }
 
 .window-prompt.full-view > .client-area {
