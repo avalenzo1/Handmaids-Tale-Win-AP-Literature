@@ -331,10 +331,8 @@ function main() {
   (function() {
     let count = 0;
     let x = 0;
-    let y = 250;
+    let y = 0;
     $("#shut-down").click(function() {
-      new WindowAlert("", "<img width='200' src='https://pbs.twimg.com/profile_images/1474382060080959488/-wHLVZ_x_400x400.jpg'>");
-      
       setInterval(function() {
         x += 10;
         y += 10;
