@@ -345,7 +345,7 @@ function main() {
         if (count === 25) {
           location.reload();
         }
-      },10);
+      },50);
     });
 })();
 }
