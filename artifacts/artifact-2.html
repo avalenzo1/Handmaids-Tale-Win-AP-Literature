@@ -1,27 +1,34 @@
 <script>
+  // href="javascript:linkTo('Notepad', 'Artifact_3','/artifacts/artifact-3.html');"
+  
   function linkTo(app,file_name,file_url) {
     new Window(`${file_name} - ${app}`).initApp(file_url);
   }
 </script>
 
 <style>
-  blockquote {
+  :root {
+    --handmaid-color-hsl: 358.45, 74%, 41%;
+    --wife-color-hsl: 192, 64%, 18%;
+  }
+</style>
+
+<style>
+  .article blockquote {
     padding: 25px;
   }
 
-  blockquote[speaker="Serena Joy"] {
+  .article blockquote[speaker="Serena Joy"] {
     background-color: hsla(var(--wife-color-hsl), 0.1);
-    border: hsla(var(--wife-color-hsl), 0.2) 1px solid;
-    border-radius: 5px;
+    border: hsla(var(--wife-color-hsl), 0.2) 1px dotted;
   }
 
-  blockquote[speaker="Private Citizen"] {
+  .article blockquote[speaker="Private Citizen"] {
     background-color: hsla(var(--handmaid-color-hsl), 0.1);
-    border: hsla(var(--handmaid-color-hsl), 0.2) 1px solid;
-    border-radius: 5px;
+    border: hsla(var(--handmaid-color-hsl), 0.2) 1px dotted;
   }
 
-  blockquote::after {
+  .article blockquote::after {
     content: "-" attr(speaker);
     display: block;
     padding-top: 10px;
@@ -29,7 +36,7 @@
   }
 </style>
 
-<article>
+<article class="article">
   <h2>
     Interview with Serena Joy, Popular Conservative Televangelist, and a Private
     Gilead Citizen.
@@ -37,12 +44,10 @@
 
   <h3>
     What are your thoughts on the
-    <a href="/#!/artifact-3.html">coup on congress last year?</a>
+    <a href="javascript:linkTo('Notepad', 'Artifact_3','/artifacts/artifact-3.html');">coup on congress last year?</a>
   </h3>
 
-  <blockquote speaker="Serena Joy">
-    
-  </blockquote>
+  <blockquote speaker="Serena Joy"></blockquote>
 
   <blockquote speaker="Private Citizen"></blockquote>
 
@@ -82,6 +87,11 @@
   </blockquote>
 
   <blockquote speaker="Private Citizen">
+    I am deeply fraught by our sudden loss of rights. It's unfortunate that
+    after so many years of development, trying to make the US equal, it was all
+    quickly undone in months. I lost my job, and now my friends and I cannot use
+    our own Compunumbers to buy food; it's rather excessive. Just talking about
+    this brings me at risk because of the suspension of the 1st amendment.
   </blockquote>
 
   <hr />
