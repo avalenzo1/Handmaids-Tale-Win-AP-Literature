@@ -1,17 +1,15 @@
-function updateDropdown() {
-  $('.window .dropdown .dropdown-toggle').click(function() {
-    let dropdown = $(this).closest(".dropdown");
-    let dropdown_menu = $(dropdown).find(".dropdown-menu");
-    let direction = $(dropdown).attr("direction");
+function dropdown(e) {
+  let dropdown = $(e.currentTarget).closest(".dropdown");
+  let dropdown_menu = $(dropdown).find(".dropdown-menu");
+  let direction = $(dropdown).attr("direction");
 
-    if (direction === 'top') {
-      $(dropdown_menu).css("transform", `translate3d(0px, ${-$(dropdown_menu).outerHeight()}px, 0px)`)
-    } else if (direction === 'bottom') {
-      $(dropdown_menu).css("transform", `translate3d(0px, ${$(dropdown_menu).outerHeight() - $(this).outerHeight()}px, 0px)`)
-    }
+  if (direction === 'top') {
+    $(dropdown_menu).css("transform", `translate3d(0px, ${-$(dropdown_menu).outerHeight()}px, 0px)`)
+  } else if (direction === 'bottom') {
+    $(dropdown_menu).css("transform", `translate3d(0px, ${$(dropdown_menu).outerHeight() - $(e.currentTarget).outerHeight()}px, 0px)`)
+  }
 
-    $(dropdown_menu).toggle();
-  }); 
+  $(dropdown_menu).toggle();
 }
 
 class Window {
@@ -57,9 +55,11 @@ class Window {
       snap: ".window",
       snapMode: "inner",
       snapTolerance: 3,
-    }).css({left:this.x, top: this.y});; // resizable();
+    }).css({left:this.x, top: this.y}); // resizable();
     
-    updateDropdown()
+    $(`#${this.uniqueID} .dropdown .dropdown-toggle`).click(function(e) {
+      dropdown(e);
+    }); 
     
     let window = this;
     
@@ -324,9 +324,9 @@ function main() {
     setInterval(changeTime, 1000 * 60);
   });
   
-  // not very efficient...
-  
-  updateDropdown();
+  $('.window .dropdown .dropdown-toggle').click(function(e) {
+    dropdown(e);
+  });
   
   (function() {
     let count = 0;
