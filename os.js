@@ -4,9 +4,9 @@ function dropdown(e) {
   let direction = $(dropdown).attr("direction");
 
   if (direction === 'top') {
-    $(dropdown_menu).css("transform", `translate3d(0px, ${-$(dropdown_menu).outerHeight()}px, 0px)`)
+    $(dropdown_menu).css("transform", `translate3d(0px, ${-$(dropdown_menu).outerHeight()}px, 0px)`);
   } else if (direction === 'bottom') {
-    $(dropdown_menu).css("transform", `translate3d(0px, ${$(dropdown_menu).outerHeight() - $(e.currentTarget).outerHeight()}px, 0px)`)
+    $(dropdown_menu).css("transform", `translate3d(0px, ${$(dropdown_menu).outerHeight() - $(e.currentTarget).outerHeight()}px, 0px)`);
   }
 
   $(dropdown_menu).toggle();
@@ -244,8 +244,8 @@ function main() {
     let startY = 0;
 
     function selectionBox(e) {
-      this.clientX = e.clientX - $("#main").getBoundingClientRect().left;
-      this.clientY = e.clientY - $("#main").getBoundingClientRect().top;
+      this.clientX = e.clientX - $("#main").offset().left;
+      this.clientY = e.clientY - $("#main").offset().top;
       this.selectionX = parseInt($(".selection").css("left"));
       this.selectionY = parseInt($(".selection").css("top"));
 
