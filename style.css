@@ -226,7 +226,7 @@ body {
   border-color: var(--outset-inner-border-color);
 }
 
-.window .btn, .btn * {
+.window .btn, .window .btn * {
     cursor: url(https://cdn.glitch.global/31f9c0b6-abdb-466e-82fa-6dcaef7dfb1a/Cursor_15.cur?v=1654048053107),
     auto;
 }
@@ -432,18 +432,12 @@ body {
   margin: 25px;
 }
 
-.btn-option .btn-container {
-  width: 100%;
-  padding-top: 100%; /* 1:1 Aspect Ratio */
+.btn-options .btn-container {
+  width: 40px;
+  padding-top: 100%;
   position: relative;
 }
 
 .btn-options .btn-container .btn {
-  padding: 15px;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  border-radius: 5;
 }
