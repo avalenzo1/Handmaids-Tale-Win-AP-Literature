@@ -437,25 +437,17 @@ body {
 }
 
 .btn-options .btn-container .btn {
+  display: block;
   background-color: #121424;
   color: #ffffff;
   font-family: 'Open Sans', sans-serif;
   padding: 10px;
   border-radius: 20px;
   cursor: pointer;
+  text-decoration: none;
+  font-size: small;
 }
 
 .btn .breathing-right {
   margin-right: 5px;
-}
-
-.info-page {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ffffff;
 }
