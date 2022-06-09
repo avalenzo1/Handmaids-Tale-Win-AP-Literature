@@ -369,23 +369,23 @@ body {
   left: 0 !important; top: 0 !important; bottom: 33px !important; right: 0 !important;
 }
 
-.window-prompt.full-view > .client-area {
+.window .window-prompt.full-view > .client-area {
   resize: none;
   overflow: auto;
   width: inherit !important;
   flex-grow: 1;
 }
 
-.window-prompt.no-resize > .client-area {
+.window .window-prompt.no-resize > .client-area {
   resize: none !important;
 }
 
-.window-prompt:focus {
+.window .window-prompt:focus {
   z-index: 76;
   outline: none;
 }
 
-.window-prompt > .title-bar {
+.window .window-prompt > .title-bar {
   display: flex;
   align-items: center;
   background-color: #000000;
@@ -393,29 +393,29 @@ body {
   padding: 2px;
 }
 
-.window-prompt > .title-bar > .title-text {
+.window .window-prompt > .title-bar > .title-text {
   padding-right: 15px;
   flex-grow: 1;
 }
 
-.window-prompt.active {
+.window .window-prompt.active {
   z-index: 76;
 }
 
-.window-prompt.active > .title-bar {
+.window .window-prompt.active > .title-bar {
   background-color: var(--active-color);
 }
 
-.window-prompt > .title-bar > .window-options {
+.window .window-prompt > .title-bar > .window-options {
   margin-left: auto;
 }
 
-.window-prompt > .menu-bar {
+.window .window-prompt > .menu-bar {
   padding-top: 2px;
   padding-bottom: 2px;
 }
 
-.window-prompt > .client-area {
+.window .window-prompt > .client-area {
   background-color: #ffffff;
   color: #000000;
   padding: 10px;
@@ -423,4 +423,27 @@ body {
   resize: both;
   overflow: auto;
   user-select: auto;
+}
+
+.btn-options {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 25px;
+}
+
+.btn-option .btn-container {
+  width: 100%;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  position: relative;
+}
+
+.btn-options .btn-container .btn {
+  padding: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
