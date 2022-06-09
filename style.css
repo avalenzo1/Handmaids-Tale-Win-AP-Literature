@@ -432,12 +432,13 @@ body {
   margin: 25px;
 }
 
-.btn-options .btn-container {
-  width: 40px;
-  padding-top: 100%;
-  position: relative;
+.btn-options .btn-container .btn {
+  background-color: 
+  font-family: 'Open Sans', sans-serif;
+  padding: 10px;
+  border-radius: 20px;
 }
 
-.btn-options .btn-container .btn {
-  border-radius: 5;
+.btn-options .btn-container .btn .breathing-right {
+  margin-right: 5px;
 }
