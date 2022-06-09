@@ -427,18 +427,35 @@ body {
 
 .btn-options {
   position: absolute;
+  display: flex;
+  gap: 5px;
   bottom: 0;
   right: 0;
   margin: 25px;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .btn-options .btn-container .btn {
-  background-color: 
+  background-color: #121424;
+  color: #ffffff;
   font-family: 'Open Sans', sans-serif;
   padding: 10px;
   border-radius: 20px;
+  cursor: pointer;
 }
 
-.btn-options .btn-container .btn .breathing-right {
+.btn .breathing-right {
   margin-right: 5px;
+}
+
+.info-page {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
 }

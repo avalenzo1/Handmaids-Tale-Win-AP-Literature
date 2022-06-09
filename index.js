@@ -81,9 +81,15 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 // the buttons below determine if to remember/forget user
 
 $(".remember-btn").click(function() {
+  location.reload();
   localStorage.setItem("remember", 1);
 });
 
 $(".forget-btn").click(function() {
+  location.reload();
   localStorage.setItem("remember", 0);
+});
+
+$(".info-btn").click(function() {
+  $(".info-page").toggle();
 });
