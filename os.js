@@ -244,8 +244,8 @@ function main() {
     let startY = 0;
 
     function selectionBox(e) {
-      this.clientX = e.clientX - $("#main").offset().left;
-      this.clientY = e.clientY - $("#main").offset().top;
+      this.clientX = e.clientX - $(".window").offset().left;
+      this.clientY = e.clientY - $(".window").offset().top;
       this.selectionX = parseInt($(".selection").css("left"));
       this.selectionY = parseInt($(".selection").css("top"));
 
@@ -278,8 +278,8 @@ function main() {
     $(".bg").mousedown(function (e) {
       $(".selection").show();
 
-      this.clientX = e.clientX - $("#main").getBoundingClientRect().left;
-      this.clientY = e.clientY - $("#main").getBoundingClientRect().top;
+      this.clientX = e.clientX - $(".window").getBoundingClientRect().left;
+      this.clientY = e.clientY - $(".window").getBoundingClientRect().top;
 
       startX = this.clientX;
       startY = this.clientY;
