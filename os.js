@@ -191,9 +191,9 @@ function main() {
   $(".window .taskbar").show();
   $(".window .file").show();
   
-//   setInterval(function() {
-//     new WindowAlert("Error", "Under His Eye");
-//   }, 777);
+  if (Math.random() > 0.777) {
+    new WindowAlert("Error", "Under His Eye");
+  }
   
   $(".file").draggable({
     containment: "parent",
